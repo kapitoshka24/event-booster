@@ -1,78 +1,67 @@
 .card-container {
+  // временный фон удалить
+  background-color: black;
+  // --
   display: flex;
   flex-wrap: wrap;
   width: 320px;
   margin: 0 auto;
-  padding: 60px 25px 65px;
+  padding: 52px 15px 60px 25px;
   @media screen and (min-width: 768px) {
-    width: 644px;
+    width: 768px;
+    padding: 123px 73px 60px 85px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 1050px;
-    padding-left: 60px;
-    padding-right: 60px;
+    width: 1280px;
+    padding: 133px 161px 80px 173px;
   }
 }
 
 .card-container-item {
   @media screen and (max-width: 767px) {
-    width: calc((100% - 14px) / 2);
+    width: calc((100% - 4px) / 2);
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: calc((100% - 2 * 27px) / 3);
+    width: calc((100% - 26px) / 3);
   }
 
   @media screen and (min-width: 1280px) {
-    width: calc((100% - 3 * 70px) / 4);
+    width: calc((100% - 3 * 56px) / 4);
   }
 }
 
 .card-container-item:not(:nth-child(2n)) {
   @media screen and (max-width: 767px) {
-    margin-right: 14px;
+    margin-right: 4px;
   }
 }
 
 .card-container-item:not(:nth-child(3n)) {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    margin-right: 27px;
+    margin-right: 13px;
   }
 }
 
 .card-container-item:not(:nth-child(4n)) {
   @media screen and (min-width: 1280px) {
-    margin-right: 70px;
+    margin-right: 56px;
   }
 }
 
 .card-container-item:not(:nth-last-child(-n + 2)) {
   @media screen and (max-width: 767px) {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 .card-container-item:not(:nth-last-child(-n + 3)) {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 }
 .card-container-item:not(:nth-last-child(-n + 4)) {
   @media screen and (min-width: 1280px) {
-    margin-bottom: 65px;
+    margin-bottom: 50px;
   }
-}
-
-// Удалить/заменить на стили карты
-.event-image {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-h2,
-p {
-  margin: 0;
-  margin-bottom: 5px;
-  padding: 0;
 }
