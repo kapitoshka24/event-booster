@@ -1,5 +1,6 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const paths = require('../utils/paths');
 
@@ -62,8 +63,9 @@ module.exports = env => ({
         use: 'html-loader',
       },
       {
-        test: /\.hbs$/,
-        use: 'handlebars-loader',
+        test: /\.hbs/,
+        loader: 'handlebars-loader',
+        exclude: /(node_modules|bower_components)/,
       },
     ],
   },
@@ -71,5 +73,13 @@ module.exports = env => ({
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
     new WebpackBar(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: paths.COPY_DIR,
+          to: paths.COPY_DIR_B,
+        },
+      ],
+    }),
   ],
 });
