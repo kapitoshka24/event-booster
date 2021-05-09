@@ -1,1 +1,22 @@
+.country-list {
+  padding: 10px 0 10px 30px;
+  width: 270px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 20px;
+  //   border: 0;
+  color: $form-text-color;
+}
 
+.inputs {
+  width: 270px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 570px;
+    text-align: end;
+  }
+}
