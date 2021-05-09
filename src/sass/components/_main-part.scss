@@ -1,7 +1,7 @@
-.card-container {
-  // временный фон удалить
+.main-part {
   background-color: black;
-  // --
+}
+.card-container {
   display: flex;
   flex-wrap: wrap;
   width: 320px;
