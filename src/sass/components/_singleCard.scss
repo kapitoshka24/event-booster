@@ -1,0 +1,43 @@
+// Удалить/заменить на стили карты
+.card {
+  position: relative;
+  @media screen and (max-width: 767px) {
+    padding-top: 9px;
+    padding-right: 10px;
+  }
+}
+.event-image {
+  display: block;
+  border-radius: 50px 0px;
+  background-color: rgb(49, 49, 49);
+  @media screen and (max-width: 767px) {
+    width: 128px;
+    height: 161px;
+  }
+
+  margin-bottom: 5px;
+}
+.event-image::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  background-image: url(../img/grid.svg);
+  background-repeat: no-repeat;
+  width: 108px;
+  height: 101px;
+}
+.event-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+p {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
