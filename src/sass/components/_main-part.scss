@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   width: 320px;
   margin: 0 auto;
-  padding: 60px 25px 65px;
+  padding: 60px 15px 65px 25px;
   @media screen and (min-width: 768px) {
     width: 644px;
   }
@@ -17,7 +17,7 @@
 
 .card-container-item {
   @media screen and (max-width: 767px) {
-    width: calc((100% - 14px) / 2);
+    width: calc((100% - 4px) / 2);
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -31,7 +31,7 @@
 
 .card-container-item:not(:nth-child(2n)) {
   @media screen and (max-width: 767px) {
-    margin-right: 14px;
+    margin-right: 4px;
   }
 }
 
@@ -61,18 +61,4 @@
   @media screen and (min-width: 1280px) {
     margin-bottom: 65px;
   }
-}
-
-// Удалить/заменить на стили карты
-.event-image {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-h2,
-p {
-  margin: 0;
-  margin-bottom: 5px;
-  padding: 0;
 }
