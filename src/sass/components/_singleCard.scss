@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  overflow: hidden;
   &::after {
     content: '';
     position: absolute;
@@ -24,17 +25,19 @@
     padding-right: 14px;
   }
 }
-.event-image {
-  border-radius: 50px 0px;
-
+.image-container {
   @media screen and (max-width: 767px) {
     width: 128px;
     height: 161px;
   }
-  @media screen and (min-width: 767px) and (max-width: 1279px) {
+  @media screen and (min-width: 767px) {
     width: 180px;
     height: 227px;
   }
+}
+.event-image {
+  border-radius: 50px 0px;
+  object-fit: cover;
 
   margin-bottom: 5px;
 }

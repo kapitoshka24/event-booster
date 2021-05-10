@@ -1,6 +1,8 @@
 <div class="card">
-    <img class="event-image" src="./images/temporary-image.png" alt="temp">
-    <h2 class="event-title">Eurovision 2021 finals!</h2>
-    <p class="event-data">data</p>
-    <p class="event-location">Palace of Ukraine</p>
+    <div class="image-container">
+        <img class="event-image" src={{#with images}}{{[7].url}}{{/with}} alt="temp">
+    </div>
+    <h2 class="event-title">{{name}}</h2>
+    <p class="event-data">{{dates.start.localDate}}</p>
+    <p class="event-location"> {{#with _embedded.venues}}{{[0].name}}{{/with}}</p>
 </div>
