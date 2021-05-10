@@ -1,0 +1,101 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(3px);
+
+  opacity: 1;
+
+  //   &.is-hidden {
+  //     opacity: 0;
+  //     pointer-events: none;
+  //   }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: block;
+  width: 930px;
+  height: 1023px;
+  max-height: 100%;
+  padding: 62px 30px;
+  border-radius: 300px 0px;
+  background: #fff2fd;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+
+  border: none;
+  background: #fff2fd;
+}
+
+.modal-btn-svg {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-event-icon {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-bottom: 41px;
+  border-radius: 50%;
+}
+
+.modal-event-data {
+  display: flex;
+}
+
+.modal-poster {
+  margin-right: 60px;
+}
+
+.modal-event-data-list {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-data-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.modal-data-item-title {
+  margin: 0px 0px 7px;
+
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.modal-data-item-text {
+  margin: 0;
+
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.date,
+.сity-country {
+  margin-bottom: 5px;
+}
