@@ -1,12 +1,16 @@
 .backdrop {
+  z-index: 10000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 
   background: rgba(32, 13, 29, 0.6);
   backdrop-filter: blur(3px);
+
+  overflow-y: auto;
 
   opacity: 1;
 
@@ -17,18 +21,21 @@
 }
 
 .modal {
-  position: fixed;
-  top: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 
-  display: block;
-  width: 930px;
-  height: 1023px;
-  max-height: 100%;
   padding: 62px 30px;
   border-radius: 300px 0px;
   background: #fff2fd;
+
+  width: 924px;
+  min-height: 1023px;
+  max-height: 1023px;
 }
 
 .modal-btn {
