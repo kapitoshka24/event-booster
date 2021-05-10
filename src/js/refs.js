@@ -1,5 +1,7 @@
 export const refs = {
-  cardContainer: document.querySelector('.main-part'),
-  form: document.querySelector('.inputs'),
-  footer: document.querySelector('.footer'),
+    header: document.querySelector(".header"),
+    form: document.querySelector(".inputs"),
+    mainPart: document.querySelector(".main-part"),
+    cardContainer: document.querySelector(".card-container"),
+    footer: document.querySelector('.footer'),
 };

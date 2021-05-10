@@ -1,8 +1,8 @@
-import EventApiService from './apiService';
+import api from './apiService';
 import { refs } from './refs';
 import cardContainerMkp from '../templates/card-container.hbs';
 
-const eventApiService = new EventApiService();
+const eventApiService = new api.EventApiService();
 export default async () => {
   try {
     const result = await eventApiService.fetchEvent();
