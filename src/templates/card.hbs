@@ -4,5 +4,11 @@
     </div>
     <h2 class="event-title">{{name}}</h2>
     <p class="event-data">{{dates.start.localDate}}</p>
-    <p class="event-location"> {{#with _embedded.venues}}{{[0].name}}{{/with}}</p>
+    <p class="event-location"> {{#with _embedded.venues}}
+        {{#if [0].name}}
+        {{[0].name}}
+        {{else}}
+        Unknown place
+        {{/if}}
+        {{/with}}</p>
 </div>
