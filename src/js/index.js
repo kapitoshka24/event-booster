@@ -1,8 +1,15 @@
 import '../sass/main.scss';
 import './apiService';
 import { refs } from './refs';
+
+// Template of searchFormInput
+import searchFormInputMkp from '../templates/search-input.hbs';
+
 import cardContainerMkp from '../templates/card-container.hbs';
 import paginationMkp from '../templates/pagination.hbs';
+
+// Adding template of searchFormInput to '.main-part'
+refs.cardContainer.insertAdjacentHTML('afterbegin', searchFormInputMkp());
 
 // заменить на корректный: при отрисовке карточек, после ввода запроса
 refs.cardContainer.innerHTML = cardContainerMkp({
