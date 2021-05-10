@@ -1,1 +1,47 @@
+.header {
+  height: 304px;
+  padding-top: 78px;
+  //   padding-bottom: 118px;
 
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 387px;
+  }
+}
+
+/* главный заголовок */
+.hero-title {
+  max-width: 212px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-align: center;
+  color: $title-text-color;
+
+  @media screen and (min-width: 768px) {
+    max-width: 353px;
+    height: 74px;
+    margin-bottom: 27px;
+
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 588px;
+    height: 122px;
+    margin-bottom: 52px;
+
+    font-size: 50px;
+    line-height: 61px;
+  }
+}
