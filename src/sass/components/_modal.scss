@@ -110,6 +110,10 @@
 
 .modal-event-data {
   display: flex;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .modal-poster {
