@@ -1,0 +1,33 @@
+.pagination {
+  padding-bottom: 80px;
+
+  &-list,
+  &-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-item {
+    width: 30px;
+    height: 30px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: $text-color;
+
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &__active {
+      border: 1px solid $title-text-color;
+      border-radius: 10px 0px;
+      color: $title-text-color;
+    }
+  }
+}

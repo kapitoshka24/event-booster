@@ -1,8 +1,9 @@
 import '../sass/main.scss';
 import './apiService';
 import { refs } from './refs';
-import cardContainerMkp from '../templates/card-container.hbs';
 import './dropdown-menu';
+import cardContainerMkp from '../templates/card-container.hbs';
+import paginationMkp from '../templates/pagination.hbs';
 
 // заменить на корректный: при отрисовке карточек, после ввода запроса
 refs.cardContainer.innerHTML = cardContainerMkp({
@@ -33,3 +34,5 @@ refs.cardContainer.innerHTML = cardContainerMkp({
     3,
   ],
 });
+
+refs.cardContainer.insertAdjacentHTML('beforeend', paginationMkp());
