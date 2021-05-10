@@ -9,7 +9,8 @@ import cardContainerMkp from '../templates/card-container.hbs';
 import paginationMkp from '../templates/pagination.hbs';
 
 // Adding template of searchFormInput to '.main-part'
-refs.cardContainer.insertAdjacentHTML('afterbegin', searchFormInputMkp());
+refs.headerSection.insertAdjacentHTML('afterbegin', searchFormInputMkp());
+// refs.cardContainer.insertAdjacentHTML('afterbegin', searchFormInputMkp());
 
 // заменить на корректный: при отрисовке карточек, после ввода запроса
 refs.cardContainer.innerHTML = cardContainerMkp({
