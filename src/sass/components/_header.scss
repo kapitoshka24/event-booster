@@ -22,7 +22,6 @@
   color: $form-text-color;
   cursor: pointer;
 
-  /* reset select styles */
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,7 +29,6 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  /* custom arrow */
   background-image: url(../images/arrow-down.svg);
   background-position: 225px 15px;
   background-repeat: no-repeat;
@@ -42,7 +40,6 @@
   }
 }
 
-/* главный заголовок */
 .hero-title {
   max-width: 212px;
   height: 44px;
