@@ -20,6 +20,9 @@
 
     color: $text-color;
 
+    &:hover {
+      cursor: pointer;
+    }
     &:not(:first-child) {
       margin-left: 5px;
     }

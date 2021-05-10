@@ -6,7 +6,10 @@ const eventApiService = new EventApiService();
 export default async () => {
   try {
     const result = await eventApiService.fetchEvent();
-    refs.cardContainer.innerHTML = cardContainerMkp(result);
+    refs.cardContainer.insertAdjacentHTML(
+      'beforeend',
+      cardContainerMkp(result),
+    );
   } catch (error) {
     console.log('Error');
   }
