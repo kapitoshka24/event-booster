@@ -5,8 +5,8 @@ export default () => {
   const getEvent = new GetEvent();
   getEvent
     .fetchEvent()
-    .then(resalt => {
-      refs.cardContainer.innerHTML = cardContainerMkp(resalt);
+    .then(result => {
+      refs.cardContainer.innerHTML = cardContainerMkp(result);
     })
     .catch(error => console.log(error));
 };
