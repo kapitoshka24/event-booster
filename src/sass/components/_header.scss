@@ -17,12 +17,35 @@
   height: 40px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
+
+  font-family: $font;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
+
+  border: 0;
   border-radius: 20px;
-  //   border: 0;
   color: $form-text-color;
+  cursor: pointer;
+
+  /* reset select styles */
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* custom arrow */
+  background-image: url(../images/arrow-down.svg);
+  background-position: 225px 15px;
+  background-repeat: no-repeat;
+
+  &:focus {
+    background-image: url(../images/arrow-up.svg);
+    background-position: 225px 15px;
+    background-repeat: no-repeat;
+  }
 }
 
 /* главный заголовок */
