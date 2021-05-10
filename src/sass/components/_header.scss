@@ -2,7 +2,6 @@
   height: 304px;
   padding-top: 78px;
   //   padding-bottom: 118px;
-
   @media screen and (min-width: 768px) {
     padding-top: 40px;
   }
@@ -10,6 +9,20 @@
   @media screen and (min-width: 1280px) {
     height: 387px;
   }
+}
+
+.country-list {
+  padding: 10px 30px;
+  width: 270px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 20px;
+  //   border: 0;
+  color: $form-text-color;
 }
 
 /* главный заголовок */
@@ -43,5 +56,15 @@
 
     font-size: 50px;
     line-height: 61px;
+  }
+}
+
+.inputs {
+  width: 270px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 570px;
+    text-align: end;
   }
 }
