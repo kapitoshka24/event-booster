@@ -34,7 +34,7 @@
   width: 270px;
   height: 40px;
 
-  padding-left: 30px;
+  padding: 10px 50px 10px 30px;
 
   border: none;
   border-radius: 20px;
@@ -45,8 +45,9 @@
 
 .wrapper__search-btn {
   position: absolute;
+
   top: 4px;
-  left: 233px;
+  left: 225px;
 
   display: flex;
   align-items: center;
