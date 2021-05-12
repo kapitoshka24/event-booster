@@ -11,7 +11,7 @@ export default async () => {
       cardContainerMkp(result),
     );
   } catch (error) {
-    console.log('Error');
+    console.log(error);
   } finally {
     refs.spinner.classList.add('hidden');
   }

@@ -36,13 +36,15 @@ const eventApiService = new api.EventApiService();
 export function onCountrySearch() {
   // this.value - значення атрибуту value тега <option>, яке відповідає значенню countryCode
   // function declaration тому що this
-  eventApiService.countryQuery = this.value;
+  api.options.countryQuery = this.value;
+
+  // eventRender();
   searchEventsByCountry();
 }
 
 const searchEventsByCountry = async () => {
   try {
-    const result = await eventApiService.fetchEventByCountryCode();
+    const result = await eventApiService.fetchEvent();
     clearCardContainer();
     renderEventCards(result);
   } catch (error) {
