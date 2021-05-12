@@ -14,10 +14,7 @@
   <body>
     <section class="header">
       <h1 class="hero-title">FIND BEST EVENTS AROUND THE WORLD</h1>
-      <form class="inputs">
-        <!-- удалить когда добавиться разметка инпута поиска -->
-        <input name="search" type="text" />
-      </form>
+      <form class="inputs"></form>
     </section>
     <section class="main-part">
       <ul class="card-container"></ul>
@@ -28,7 +25,10 @@
       <div class="modal">
         <button class="modal-btn" data-modal-close>
           <svg class="modal-btn-svg">
-            <use class="modal-btn-svg-use" href="./images/symbol-defs.svg#close-modal"></use>
+            <use
+              class="modal-btn-svg-use"
+              href="./images/symbol-defs.svg#close-modal"
+            ></use>
           </svg>
         </button>
         <img class="modal-event-icon" width="132px" height="132px" />
@@ -52,9 +52,7 @@
               <p class="modal-data-item-text сity-country">
                 Lorem ipsum dolor sit
               </p>
-              <p class="modal-data-item-text">
-                Lorem ipsum dolor sit
-              </p>
+              <p class="modal-data-item-text">Lorem ipsum dolor sit</p>
             </li>
             <li class="modal-data-item">
               <h3 class="modal-data-item-title">WHO</h3>
@@ -88,14 +86,15 @@
                 </p>
               </li>
               <li class="modal-data-item">
-                <button class="modal-btn-buy-tickets btn-tickets">BUY TICKETS</button>
+                <button class="modal-btn-buy-tickets btn-tickets">
+                  BUY TICKETS
+                </button>
               </li>
-            </ul> 
+            </ul>
           </ul>
         </div>
         <button class="modal-author-btn">MORE FROM THIS AUTHOR</button>
       </div>
-      
     </div>
   </body>
 </html>
