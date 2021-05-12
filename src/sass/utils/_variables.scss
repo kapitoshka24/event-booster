@@ -3,3 +3,7 @@ $text-color: #ffffff;
 $title-text-color: #dc56c5;
 
 $font: 'Montserrat';
+
+@function transitionFunc($key) {
+  @return $key 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
