@@ -8,4 +8,5 @@ export const refs = {
   modal: document.querySelector('[data-modal]'),
   footer: document.querySelector('.footer'),
   headerSection: document.querySelector('.header'),
+  cardContainer: document.querySelector('.card-container'),
 };
