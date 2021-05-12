@@ -1,6 +1,6 @@
 import '../sass/main.scss';
 import './apiService';
-import addSearchQuery from './searchQuery';
+import { addSearchQuery } from './searchQuery';
 import { refs } from './refs';
 import searchFormInputMkp from '../templates/search-input.hbs';
 import './dropdown-menu';
