@@ -6,4 +6,5 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   footer: document.querySelector('.footer'),
+  headerSection: document.querySelector('.header'),
 };
