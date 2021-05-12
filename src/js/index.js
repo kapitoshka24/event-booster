@@ -23,10 +23,10 @@ function onClickEvent(e) {
 
   const selectedEl = e.target;
 
-  if (!selectedEl.classList.contains('card-container-item')) {
-    return;
-  } else {
+  if (selectedEl.nodeName === 'DIV' || selectedEl.nodeName === 'IMG') {
     refs.modal.classList.remove('is-hidden');
+  } else {
+    onClickCross();
   }
 }
 
