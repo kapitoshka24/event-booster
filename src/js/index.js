@@ -16,6 +16,20 @@ refs.form.insertAdjacentHTML('afterbegin', searchFormInputMkp());
 
 refs.closeModalBtn.addEventListener('click', onClickCross);
 
+refs.cardContainer.addEventListener('click', onClickEvent);
+
+function onClickEvent(e) {
+  e.preventDefault();
+
+  const selectedEl = e.target;
+
+  if (!selectedEl.classList.contains('card-container-item')) {
+    return;
+  } else {
+    refs.modal.classList.remove('is-hidden');
+  }
+}
+
 function onClickCross() {
-  refs.modal.classList.toggle('is-hidden');
+  refs.modal.classList.add('is-hidden');
 }
