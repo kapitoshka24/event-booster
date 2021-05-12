@@ -1,6 +1,6 @@
 import '../sass/main.scss';
 import './apiService';
-import addSearchQuery from './searchQuery';
+import { addSearchQuery } from './searchQuery';
 import { refs } from './refs';
 import './dropdown-menu';
 import eventRender from './eventRender';
