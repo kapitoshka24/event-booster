@@ -86,7 +86,7 @@
   -moz-appearance: none;
 
   background-image: url(../images/arrow-down.svg);
-  background-position: 225px 15px;
+  background-position: 225px 17px;
   background-repeat: no-repeat;
 
   &:focus {
@@ -135,8 +135,9 @@
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
     width: 570px;
-    text-align: end;
   }
 }
 
