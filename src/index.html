@@ -11,10 +11,119 @@
     <title>Event Booster</title>
   </head>
   <body>
+<<<<<<< Updated upstream
     <section class="header">
       <form class="inputs"></form>
     </section>
     <section class="main-part"></section>
     <section class="footer"></section>
+=======
+    <div class="overlay">
+      <section class="header">
+        <div class="logo-background"></div>
+        <a class="logo" href="./index.html">
+          <img src="./images/logo.svg" alt="site logo" />
+        </a>
+        <h1 class="hero-title">FIND BEST EVENTS AROUND THE WORLD</h1>
+        <form class="inputs"></form>
+      </section>
+    </div>
+
+    <div class="bg-img__elements">
+      <section class="main-part">
+        <div class="spinner">
+          <div class="spinner-container animate__animated animate__pulse">
+            <img
+              src="./images/logo-spinner.svg"
+              class="spinner-icon"
+              alt="logo"
+            />
+          </div>
+          <div class="dot-pulse"></div>
+        </div>
+        <ul class="card-container"></ul>
+      </section>
+      <section class="footer"></section>
+    </div>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <div class="container-btn" data-modal-close>
+          <button class="modal-btn">
+            <svg class="modal-btn-svg">
+              <use
+                class="modal-btn-svg-use"
+                href="./images/symbol-defs.svg#close-modal"
+              ></use>
+            </svg>
+          </button>
+        </div>
+
+        <img class="modal-event-icon" width="132px" height="132px" />
+        <div class="modal-event-data">
+          <img class="modal-poster" width="360px" height="641px" />
+          <ul class="modal-event-data-list">
+            <li class="modal-data-item">
+              <h3 class="modal-data-item-title">INFO</h3>
+              <p class="modal-data-item-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                quia, blanditiis corrupti, itaque unde
+              </p>
+            </li>
+            <li class="modal-data-item">
+              <h3 class="modal-data-item-title">WHEN</h3>
+              <p class="modal-data-item-text date">Lorem ipsum dolor sit</p>
+              <p class="modal-data-item-text">Lorem ipsum dolor sit</p>
+            </li>
+            <li class="modal-data-item">
+              <h3 class="modal-data-item-title">WHERE</h3>
+              <p class="modal-data-item-text сity-country">
+                Lorem ipsum dolor sit
+              </p>
+              <p class="modal-data-item-text">Lorem ipsum dolor sit</p>
+            </li>
+            <li class="modal-data-item">
+              <h3 class="modal-data-item-title">WHO</h3>
+              <p class="modal-data-item-text">Lorem ipsum dolor</p>
+            </li>
+            <ul class="modal-event-data-list">
+              <li>
+                <h3 class="modal-data-item-title">PRICES</h3>
+              </li>
+              <li class="modal-data-item">
+                <p class="modal-data-item-text price">
+                  <span>
+                    <svg class="modal-price-barcode">
+                      <use href="./images/symbol-defs.svg#barcode"></use>
+                    </svg>
+                  </span>
+                  Lorem ipsum dolor sit
+                </p>
+              </li>
+              <li class="modal-data-item btn-tickets">
+                <button class="modal-btn-buy-tickets">BUY TICKETS</button>
+              </li>
+              <li class="modal-data-item">
+                <p class="modal-data-item-text price">
+                  <span>
+                    <svg width="29px" height="19px" class="modal-price-barcode">
+                      <use href="./images/symbol-defs.svg#barcode"></use>
+                    </svg>
+                  </span>
+                  Lorem ipsum dolor sit
+                </p>
+              </li>
+              <li class="modal-data-item">
+                <button class="modal-btn-buy-tickets btn-tickets">
+                  BUY TICKETS
+                </button>
+              </li>
+            </ul>
+          </ul>
+        </div>
+        <button class="modal-author-btn">MORE FROM THIS AUTHOR</button>
+      </div>
+    </div>
+>>>>>>> Stashed changes
   </body>
 </html>
