@@ -8,6 +8,7 @@ import eventRender from './eventRender';
 import paginationMkp from '../templates/pagination.hbs';
 import { onClickEvent, onClickCross } from './modal';
 import debounce from 'lodash.debounce';
+import './modal-content-render';
 
 refs.form.addEventListener('input', debounce(addSearchQuery, 500));
 refs.footer.insertAdjacentHTML('beforebegin', paginationMkp());
