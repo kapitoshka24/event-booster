@@ -7,17 +7,19 @@ function onClickEvent(e) {
 
   if (selectedEl.classList.contains('card-container')) {
     onClickCross();
-  } else refs.modal.classList.remove('is-hidden');
+  } else {
+    refs.modal.classList.remove('is-hidden');
+    refs.body.classList.add('scroll-hidden');
+  }
 }
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
+  scrollHidden();
 }
 
 function scrollHidden() {
-  if (refs.modal.classList.remove('is-hidden')) {
-    return refs.body.classList.add('scroll-hidden');
-  }
+  refs.body.classList.remove('scroll-hidden');
 }
 
-export { onClickEvent, onClickCross, scrollHidden };
+export { onClickEvent, onClickCross };
