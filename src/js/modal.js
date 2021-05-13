@@ -14,4 +14,10 @@ function onClickCross() {
   refs.modal.classList.add('is-hidden');
 }
 
-export { onClickEvent, onClickCross };
+function scrollHidden() {
+  if (refs.modal.classList.remove('is-hidden')) {
+    return refs.body.classList.add('scroll-hidden');
+  }
+}
+
+export { onClickEvent, onClickCross, scrollHidden };
