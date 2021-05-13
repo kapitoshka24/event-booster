@@ -9,7 +9,7 @@ function onClickEvent(e) {
     onClickCross();
   } else {
     refs.modal.classList.remove('is-hidden');
-    refs.body.classList.add('scroll-hidden');
+    scrollHidden();
   }
 }
 
@@ -19,7 +19,7 @@ function onClickCross() {
 }
 
 function scrollHidden() {
-  refs.body.classList.remove('scroll-hidden');
+  refs.body.classList.toggle('scroll-hidden');
 }
 
 export { onClickEvent, onClickCross };
