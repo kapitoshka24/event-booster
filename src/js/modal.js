@@ -38,6 +38,7 @@ function onClickEvent(e) {
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
+  clearModalContainer();
 }
 
 const onModalOpen = (id) => {
@@ -50,12 +51,16 @@ const eventApiService = new api.EventApiService();
 const searchEventById = async () => {
   try {
     const result = await eventApiService.fetchEventById();
-    console.dir(result.images[9].url);
+    console.log(result);
     appendEventContent(result);
   } catch (error) {
     console.log('Error');
   }
 };
+
+const clearModalContainer = () => {
+  refs.modalContentContainer.innerHTML = '';
+}
 
 const appendEventContent = (result) => {
   refs.modalContentContainer.insertAdjacentHTML('beforeend', eventContentTpl(result));
