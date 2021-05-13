@@ -1,3 +1,7 @@
+.scroll-hidden {
+  overflow-y: hidden;
+}
+
 .backdrop {
   z-index: 10000;
   position: fixed;
@@ -23,12 +27,12 @@
 
 .modal {
   opacity: 1;
-  position: absolute;
-  top: 0%;
+  position: relative;
+  top: 7%;
   left: 50%;
+
   transform: translate(-50%, 0%);
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+
   padding: 75px 17px 104px 12px;
 
   border-radius: 150px 0px;
@@ -52,6 +56,11 @@
     padding: 62px 30px;
     border-radius: 300px 0px;
   }
+}
+.spacer {
+  height: 1px;
+  margin: 10% 0 1px 0;
+  background: transparent;
 }
 .container-btn {
   width: 35px;

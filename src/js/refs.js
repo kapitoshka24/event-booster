@@ -1,4 +1,5 @@
 export const refs = {
+  body: document.querySelector('body'),
   header: document.querySelector('.header'),
   form: document.querySelector('.inputs'),
   mainPart: document.querySelector('.main-part'),
