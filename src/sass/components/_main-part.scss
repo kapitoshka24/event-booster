@@ -3,15 +3,17 @@
   flex-wrap: wrap;
   width: 320px;
   margin: 0 auto;
-  padding: 52px 15px 60px 25px;
+  margin-top: -60px;
+
+  padding: 0 15px 60px 25px;
   @media screen and (min-width: 768px) {
     width: 768px;
-    padding: 123px 73px 60px 85px;
+    padding: 0 73px 60px 85px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 1280px;
-    padding: 133px 161px 80px 173px;
+    padding: 0 161px 80px 173px;
   }
 }
 

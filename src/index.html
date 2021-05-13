@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Event Booster</title>
   </head>
   <body>
@@ -24,20 +28,32 @@
       </section>
     </div>
     <section class="main-part">
+      <div class="spinner">
+        <div class="spinner-container animate__animated animate__pulse">
+          <img
+            src="./images/logo-spinner.svg"
+            class="spinner-icon"
+            alt="logo"
+          />
+        </div>
+        <div class="dot-pulse"></div>
+      </div>
       <ul class="card-container"></ul>
     </section>
     <section class="footer"></section>
 
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="modal-btn" data-modal-close>
+        <div class="container-btn" data-modal-close>
+          <button class="modal-btn" >
           <svg class="modal-btn-svg">
             <use
               class="modal-btn-svg-use"
               href="./images/symbol-defs.svg#close-modal"
             ></use>
           </svg>
-        </button>
+        </button></div>
+        
         <img class="modal-event-icon" width="132px" height="132px" />
         <div class="modal-event-data">
           <img class="modal-poster" width="360px" height="641px" />

@@ -12,5 +12,7 @@ export default async () => {
     );
   } catch (error) {
     console.log('Error');
+  } finally {
+    refs.spinner.classList.add('hidden');
   }
 };
