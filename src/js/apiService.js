@@ -20,7 +20,6 @@ class EventApiService {
     return eventObj._embedded.events;
   }
 
-  // за запропонованим вище (в попередньому методі) url API вертає error
   async fetchEventByCountryCode() {
     const response = await fetch(`${URL}&countryCode=${this.countryQuery}&apikey=${API_KEY}`);
     const eventObj = await response.json();

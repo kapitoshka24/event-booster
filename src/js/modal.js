@@ -1,24 +1,5 @@
 import { refs } from './refs';
-import './modal-content-render';
-import api from './apiService';
-import eventContentTpl from '../templates/modal-container.hbs';
-
-// function onClickEvent(e) {
-//   e.preventDefault();
-
-//   const selectedEl = e.target;
-//   console.log(selectedEl);
-
-//   if (selectedEl.classList.contains('card-container')) {
-//     onClickCross();
-//   } else refs.modal.classList.remove('is-hidden');
-// }
-
-// function onClickCross() {
-//   refs.modal.classList.add('is-hidden');
-// }
-
-// export { onClickEvent, onClickCross };
+import searchEventById from './modal-content-render';
 
 function onClickEvent(e) {
   e.preventDefault();
@@ -31,8 +12,8 @@ function onClickEvent(e) {
 
   refs.modal.classList.remove('is-hidden');
 
+  // шукаю наближчого вгору предка з id="#card" і забираю id івенту, збереженого в дата-атрибуті
   const idEvent = e.target.closest('#card').getAttribute('data-id');
-  eventApiService.id = idEvent;
   onModalOpen(idEvent);
 }
 
@@ -41,29 +22,12 @@ function onClickCross() {
   clearModalContainer();
 }
 
-const onModalOpen = (id) => {
-  searchEventById();
-  console.log(id);
-}
-
-const eventApiService = new api.EventApiService();
-
-const searchEventById = async () => {
-  try {
-    const result = await eventApiService.fetchEventById();
-    console.log(result);
-    appendEventContent(result);
-  } catch (error) {
-    console.log('Error');
-  }
-};
-
 const clearModalContainer = () => {
   refs.modalContentContainer.innerHTML = '';
 }
 
-const appendEventContent = (result) => {
-  refs.modalContentContainer.insertAdjacentHTML('beforeend', eventContentTpl(result));
+const onModalOpen = (id) => {
+  searchEventById(id);
 }
 
 export { onClickEvent, onClickCross };

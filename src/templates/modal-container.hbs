@@ -5,8 +5,7 @@
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">INFO</h3>
             <p class="modal-data-item-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                quia, blanditiis corrupti, itaque unde
+                {{name}}
             </p>
         </li>
         <li class="modal-data-item">
@@ -65,6 +64,7 @@
                         </svg>
                     </span>
                     VIP
+                    {{!-- треба уточнити --}}
                     {{#with priceRanges}}
                         {{#if [2].type}}{{[2].min}}-{{else}}{{/if}}{{#if [2].type}}{{[2].max}}{{else}}-{{/if}}
                         {{#if [2].type}}{{[2].currency}}{{else}}-{{/if}}
