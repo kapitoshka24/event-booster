@@ -4,17 +4,19 @@ import api from './apiService';
 
 const eventApiService = new api.EventApiService();
 
-export default async (id) => {
+export default async id => {
   eventApiService.id = id;
   try {
     const result = await eventApiService.fetchEventById();
     appendEventContent(result);
   } catch (error) {
-    console.log('Error');
+    console.log(error);
   }
 };
 
-const appendEventContent = (result) => {
-  refs.modalContentContainer.insertAdjacentHTML('beforeend', eventContentTpl(result));
-}
-
+const appendEventContent = result => {
+  refs.modalContentContainer.insertAdjacentHTML(
+    'beforeend',
+    eventContentTpl(result),
+  );
+};
