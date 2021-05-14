@@ -120,6 +120,8 @@
   height: 102px;
   border-radius: 50%;
 
+  object-fit: cover;
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 70px;
     height: 70px;
@@ -143,6 +145,7 @@
 
 .modal-poster {
   display: none;
+  object-fit: contain;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: block;
@@ -264,9 +267,6 @@
     margin-bottom: 20px;
   }
 }
-// .modal-author-conteiner-link {
-//   width: 50%;
-// }
 
 .modal-author-btn {
   position: absolute;
