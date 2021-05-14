@@ -144,11 +144,7 @@
 .overlay {
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
-      180deg,
-      rgba(13, 13, 13, 0.19) 0%,
-      rgba(14, 14, 14, 0.8) 100%
-    ),
+  background-image: linear-gradient(rgba(11, 11, 11, 0.5)),
     url(../images/mobile/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -160,18 +156,16 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     background-image: linear-gradient(
-        180deg,
-        rgba(13, 13, 13, 0.19) 0%,
-        rgba(14, 14, 14, 0.8) 100%
+        rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)
       ),
       url(../images/mobile/hero@2x.jpg);
   }
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(
-        180deg,
-        rgba(13, 13, 13, 0.19) 0%,
-        rgba(14, 14, 14, 0.8) 100%
+        rgba(11, 11, 11, 0.5),
+        rgba(11, 11, 11, 0.5)
       ),
       url(../images/tablet/hero.jpg);
 
@@ -181,18 +175,16 @@
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       background-image: linear-gradient(
-          180deg,
-          rgba(13, 13, 13, 0.19) 0%,
-          rgba(14, 14, 14, 0.8) 100%
+          rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)
         ),
         url(../images/tablet/hero@2x.jpg);
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       background-image: linear-gradient(
-          180deg,
-          rgba(13, 13, 13, 0.19) 0%,
-          rgba(14, 14, 14, 0.8) 100%
+          rgba(11, 11, 11, 0.5),
+          rgba(11, 11, 11, 0.5)
         ),
         url(../images/desktop/hero.jpg);
 
@@ -202,12 +194,50 @@
         screen and (min-resolution: 192dpi),
         screen and (min-resolution: 2dppx) {
         background-image: linear-gradient(
-            180deg,
-            rgba(13, 13, 13, 0.19) 0%,
-            rgba(14, 14, 14, 0.8) 100%
+            rgba(11, 11, 11, 0.5),
+            rgba(11, 11, 11, 0.5)
           ),
           url(../images/desktop/hero@2x.jpg);
       }
     }
+  }
+}
+
+.overlay-small {
+  position: absolute;
+
+  width: 100%;
+  height: 102px;
+  left: 0px;
+  top: 262px;
+
+  background-image: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0) 0%,
+    rgba(14, 14, 14, 0.8) 100%
+  );
+
+  @media screen and (min-width: 768px) {
+    height: 102px;
+    left: 0px;
+    top: 262px;
+
+    background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    );
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 102px;
+    left: 0px;
+    top: 344px;
+
+    background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.19) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    );
   }
 }
