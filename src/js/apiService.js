@@ -11,7 +11,6 @@ class EventApiService {
     this.countryQuery = '';
   }
   async fetchEvent() {
-    // &countryCode удалить если фильтрация событий будет без запроса на сервер, а по полученным событиям с сервера после запроса
     const response = await fetch(
       `${URL}&keyword=${options.searchQuery}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
     );
