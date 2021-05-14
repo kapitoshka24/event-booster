@@ -7,10 +7,6 @@ export const addSearchQuery = el => {
   if (el.target.name === 'search') {
     searchEventsByQuery(el.target.value);
   }
-  // для инпута со странами подставить подходящий класс или свой if
-  // if (el.target.name === 'country') {
-  //   searchEventsByCountry(el.target.value);
-  // }
   else {
     return;
   }
@@ -24,29 +20,25 @@ const searchEventsByQuery = value => {
   eventRender();
 };
 
-// функция поиска по странам. заменить на корректную
-// value -- код страны
-// const searchEventsByCountry = value => {
-//   api.options.countryQuery = value;
-//   eventRender();
-// };
-
 const eventApiService = new api.EventApiService();
 
 export function onCountrySearch() {
   // this.value - значення атрибуту value тега <option>, яке відповідає значенню countryCode
   // function declaration тому що this
-  eventApiService.countryQuery = this.value;
+  api.options.countryQuery = this.value;
+  refs.spinner.classList.remove('hidden')
+  clearCardContainer();
   searchEventsByCountry();
 }
 
 const searchEventsByCountry = async () => {
   try {
-    const result = await eventApiService.fetchEventByCountryCode();
-    clearCardContainer();
+    const result = await eventApiService.fetchEvent();
     renderEventCards(result);
   } catch (error) {
     console.log('Error');
+  } finally {
+    refs.spinner.classList.add('hidden');
   }
 };
 
