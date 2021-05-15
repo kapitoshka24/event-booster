@@ -11,4 +11,5 @@ export const refs = {
   headerSection: document.querySelector('.header'),
   cardContainer: document.querySelector('.card-container'),
   modalContentContainer: document.querySelector('.modal-data-container'),
+  paginationList: document.querySelector('.pagination-list'),
 };

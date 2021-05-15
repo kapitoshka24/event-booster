@@ -1,7 +1,6 @@
 import { refs } from './refs';
 import storage from './storage';
 import spinner from '../templates/spinner.hbs';
-import eventRender from './eventRender';
 
 const addSpinner = (ref, place) => {
   refs[ref].insertAdjacentHTML(place, spinner());
@@ -28,12 +27,10 @@ if (!storage.getItem('first-visit')) {
   addFirstVisitStyles();
   setTimeout(() => {
     addSpinner('mainPart', 'beforeend');
-    eventRender();
     refs.firstVisit.classList.remove('first-visit-container');
     document.querySelector('.spinner.first-visit').outerHTML = '';
     storage.setItem('first-visit', true);
   }, 2500);
 } else {
   addSpinner('mainPart', 'beforeend');
-  eventRender();
 }

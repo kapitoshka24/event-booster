@@ -1,39 +1,51 @@
-const API_KEY = 'ARJZnVEmUrYNGar66goghRYaXKGawgDn';
-const options = {
+const API_KEY = '1C29h88u3svXxBVo6fuCgguwojy1aerE';
+const URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
+
+export const options = {
   searchQuery: '',
   countryQuery: '',
 };
-const BASE_URL = `https://app.ticketmaster.com/discovery/v2/events.json?size=24&apikey=${API_KEY}`;
-const URL = 'https://app.ticketmaster.com/discovery/v2/events.json?size=24';
 
 class EventApiService {
   constructor() {
     this.countryQuery = '';
     this.id = '';
-  }
-  async fetchEvent() {
-    const response = await fetch(
-      `${URL}&keyword=${options.searchQuery}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
-    );
-    const eventObj = await response.json();
-    return eventObj._embedded.events;
+    this.events = [];
+    this.page = 0;
+    this.totalPages = 0;
   }
 
-  async fetchEventByCountryCode() {
+  async fetchData(doPagesRefresh = true) {
     const response = await fetch(
-      `${URL}&countryCode=${this.countryQuery}&apikey=${API_KEY}`,
-    );
-    const eventObj = await response.json();
-    return eventObj._embedded.events;
+      `${URL}?size=24&keyword=${options.searchQuery}&page=${this.page}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
+    ).then(r => r.json());
+
+    this.events = response._embedded ? response._embedded.events : [];
+
+    if (this.page !== response.page.number) {
+      this.page = response.page.number;
+    }
+
+    this.totalPages = Math.min(1000 / 24, response.page.totalPages);
+
+    if (doPagesRefresh) {
+      window.dispatchEvent(new Event('UPDATE_PAGES'));
+    }
+
+    return {
+      events: this.events,
+      page: this.page,
+      totalPages: this.totalPages,
+    };
   }
 
   async fetchEventById() {
-    const response = await fetch(
-      `https://app.ticketmaster.com/discovery/v2/events.json?id=${this.id}&apikey=${API_KEY}`,
+    const response = await fetch(`${URL}?id=${this.id}&apikey=${API_KEY}`).then(
+      r => r.json(),
     );
-    const eventObj = await response.json();
-    return eventObj._embedded.events[0];
+
+    return response._embedded.events[0];
   }
 }
 
-export default { EventApiService, options };
+export const eventApiService = new EventApiService();

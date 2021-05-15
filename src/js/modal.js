@@ -11,9 +11,6 @@ function onClickEvent(e) {
   } else {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
-
-    // шукаю наближчого вгору предка з id="#card" і забираю id івенту, збереженого в дата-атрибуті
-
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
     onModalOpen(idEvent);
   }
@@ -40,13 +37,13 @@ const onModalOpen = id => {
 const closeModalByEscKey = evt => {
   if (evt.code === 'Escape') {
     refs.modal.classList.add('is-hidden');
-    scrollHidden();
+    onClickCross();
   }
 };
 const closeModalOnbackdropClick = evt => {
   if (evt.target === evt.currentTarget) {
     refs.modal.classList.add('is-hidden');
-    scrollHidden();
+    onClickCross();
   }
 };
 

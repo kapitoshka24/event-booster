@@ -1,13 +1,48 @@
-.pagination {
-  &-list,
-  &-item {
+.pagination-list {
+  margin-top: 60px;
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 80px;
+  }
+}
+
+.paginationjs {
+  &-page.active {
+    border: 1px solid $title-text-color;
+    border-radius: 10px 0px;
+    & > a {
+      color: $title-text-color;
+    }
+  }
+
+  &-pages > ul {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
-  &-item {
-    width: 30px;
+    & li {
+      padding: 5px;
+      @media screen and (max-width: 767px) {
+        padding: 4px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &:not(:first-child) {
+        margin-left: 5px;
+
+        @media screen and (max-width: 767px) {
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+  &-page > a,
+  &-ellipsis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30px;
     height: 30px;
 
     font-family: $font;
@@ -17,17 +52,51 @@
 
     color: $text-color;
 
-    &:hover {
-      cursor: pointer;
-    }
-    &:not(:first-child) {
-      margin-left: 5px;
-    }
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+      line-height: 1.25;
 
-    &__active {
-      border: 1px solid $title-text-color;
-      border-radius: 10px 0px;
-      color: $title-text-color;
+      min-width: 15px;
+      height: 15px;
     }
   }
+
+  &-next,
+  &-prev {
+    transform: scale(1);
+    transition: transitionFunc(transform);
+    &:hover,
+    &:focus {
+      transform: scale(1.3);
+      transition: transitionFunc(transform);
+
+      @media screen and (max-width: 767px) {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-next > a,
+  &-prev > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $title-text-color;
+    width: 30px;
+    height: 30px;
+
+    font-family: $font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.25;
+
+    @media screen and (max-width: 767px) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.hide-pages {
+  display: none;
 }

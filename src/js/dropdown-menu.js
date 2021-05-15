@@ -4,6 +4,4 @@ import countries from '../../countries.json';
 import { onCountrySearch } from './searchQuery';
 
 refs.form.insertAdjacentHTML('beforeend', dropdownMenuTpl(countries));
-
-// відслідковування події по вибору елемента зі списку (<option>)
 refs.form.querySelector('select').addEventListener('change', onCountrySearch);

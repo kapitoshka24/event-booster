@@ -11,6 +11,9 @@ module.exports = env => ({
   output: {
     path: paths.BUILD_DIR,
   },
+  externals: {
+    jquery: 'jQuery',
+  },
   module: {
     rules: [
       {
@@ -69,6 +72,7 @@ module.exports = env => ({
       },
     ],
   },
+
   plugins: [
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
@@ -76,8 +80,8 @@ module.exports = env => ({
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: paths.COPY_DIR,
-          to: paths.COPY_DIR_B,
+          from: paths.COPY_IMG,
+          to: paths.BUILD_IMG,
         },
       ],
     }),

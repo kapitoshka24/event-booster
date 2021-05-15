@@ -1,8 +1,6 @@
 import { refs } from './refs';
 import eventContentTpl from '../templates/modal-container.hbs';
-import api from './apiService';
-
-const eventApiService = new api.EventApiService();
+import { eventApiService } from './apiService';
 
 export default async id => {
   eventApiService.id = id;
