@@ -36,4 +36,22 @@ const onModalOpen = id => {
   searchEventById(id);
 };
 
-export { onClickEvent, onClickCross };
+const closeModalByEscKey = evt => {
+  if (evt.code === 'Escape') {
+    refs.modal.classList.add('is-hidden');
+    scrollHidden();
+  }
+};
+const closeModalOnbackdropClick = evt => {
+  if (evt.target === evt.currentTarget) {
+    refs.modal.classList.add('is-hidden');
+    scrollHidden();
+  }
+};
+
+export {
+  onClickEvent,
+  onClickCross,
+  closeModalByEscKey,
+  closeModalOnbackdropClick,
+};
