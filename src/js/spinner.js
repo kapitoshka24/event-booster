@@ -7,18 +7,18 @@ const addSpinner = (ref, place) => {
     refs[ref].insertAdjacentHTML(place, spinner())
 }
 
-const toggleSpinner = ({search, addClass = "first-visit"}) => {
+const addClassSpinner = ({search, addClass = "first-visit"}) => {
     document.querySelector(search).classList.add(addClass)
 }
 
-export const showHideSpinner = (param) => {
+export const toggleSpinner = (param) => {
     refs.mainPart.querySelector('.spinner').classList[param]('hidden')
 }
 
 const addFirstVisitStyles = () => {
     refs.firstVisit.classList.add("first-visit-container")
-    toggleSpinner({search: '.spinner'})
-    toggleSpinner({search: 'div.dot-pulse'})
+    addClassSpinner({search: '.spinner'})
+    addClassSpinner({search: 'div.dot-pulse'})
     document.querySelector(".first-visit-container").style = "transition: opacity 2s"
 }
 
