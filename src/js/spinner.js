@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import storage from './storage';
 import spinner from '../templates/spinner.hbs';
-import eventRender from './eventRender';
+import {eventRender} from './eventRender';
 
 const addSpinner = (ref, place) => {
   refs[ref].insertAdjacentHTML(place, spinner());

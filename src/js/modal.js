@@ -1,5 +1,6 @@
 import { refs } from './refs';
-import searchEventById from './modal-content-render';
+import {searchOptionsById} from './modal-content-render';
+import {eventRenderById} from './modal-content-render';
 
 function onClickEvent(e) {
   e.preventDefault();
@@ -15,7 +16,7 @@ function onClickEvent(e) {
     // шукаю наближчого вгору предка з id="#card" і забираю id івенту, збереженого в дата-атрибуті
 
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
-    onModalOpen(idEvent);
+    onModalOpen({id: idEvent});
   }
 }
 
@@ -34,7 +35,8 @@ const clearModalContainer = () => {
 };
 
 const onModalOpen = id => {
-  searchEventById(id);
+  searchOptionsById[Object.keys(id)[0]] = Object.values(id)[0]
+  eventRenderById();
 };
 
 const closeModalByEscKey = evt => {
