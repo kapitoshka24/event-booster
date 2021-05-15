@@ -11,20 +11,21 @@ function onClickEvent(e) {
   } else {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
-  }
 
-  // шукаю наближчого вгору предка з id="#card" і забираю id івенту, збереженого в дата-атрибуті
-  const idEvent = e.target.closest('#card').getAttribute('data-id');
-  onModalOpen(idEvent);
+    // шукаю наближчого вгору предка з id="#card" і забираю id івенту, збереженого в дата-атрибуті
+
+    const idEvent = selectedEl.closest('#card').getAttribute('data-id');
+    onModalOpen(idEvent);
+  }
 }
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
-  scrollHidden();
+  refs.body.classList.remove('scroll-hidden');
 }
 
 function scrollHidden() {
-  refs.body.classList.toggle('scroll-hidden');
+  refs.body.classList.add('scroll-hidden');
   clearModalContainer();
 }
 
