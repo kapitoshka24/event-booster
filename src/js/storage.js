@@ -4,7 +4,7 @@ export default {
             return JSON.parse(localStorage.getItem(key))
         }
         catch(error) {
-            return undefined
+            return console.error(error);
         }
     },
     setItem(key, value) {
