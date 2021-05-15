@@ -14,8 +14,6 @@ export const addSearchQuery = el => {
 
 const searchEventsByQuery = value => {
   clearCardContainer();
-  refs.spinner.classList.remove('hidden');
-
   api.options.searchQuery = value;
   eventRender();
 };
