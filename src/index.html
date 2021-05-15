@@ -16,48 +16,39 @@
     <title>Event Booster</title>
   </head>
   <body>
-    <div class="overlay">
-      <section class="header">
-        <div class="logo-background"></div>
-        <a class="logo" href="./index.html">
-          <img src="./images/logo.svg" alt="site logo" />
-        </a>
-        <h1 class="hero-title">FIND BEST EVENTS AROUND THE WORLD</h1>
-        <form class="inputs"></form>
-        <div class="overlay-small"></div>
+    <div class="container">
+      <div class="overlay">
+        <section class="header">
+          <div class="logo-background"></div>
+          <a class="logo" href="./index.html">
+            <img src="./images/logo.svg" alt="site logo" />
+          </a>
+          <h1 class="hero-title">FIND BEST EVENTS AROUND THE WORLD</h1>
+          <form class="inputs"></form>
+          <div class="overlay-small"></div>
+        </section>
+      </div>
+      <section class="main-part">
+        <ul class="card-container"></ul>
       </section>
-    </div>
-    <section class="main-part">
-      <div class="spinner">
-        <div class="spinner-container animate__animated animate__pulse">
-          <img
-            src="./images/logo-spinner.svg"
-            class="spinner-icon"
-            alt="logo"
-          />
-        </div>
-        <div class="dot-pulse"></div>
-      </div>
+      <section class="footer"></section>
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <div class="container-btn" data-modal-close>
+            <button class="modal-btn">
+              <svg class="modal-btn-svg">
+                <use
+                  class="modal-btn-svg-use"
+                  href="./images/symbol-defs.svg#close-modal"
+                ></use>
+              </svg>
+            </button>
+          </div>
 
-      <ul class="card-container"></ul>
-    </section>
-    <section class="footer"></section>
-    <div class="backdrop is-hidden" data-modal>
-      <div class="modal">
-        <div class="container-btn" data-modal-close>
-          <button class="modal-btn">
-            <svg class="modal-btn-svg">
-              <use
-                class="modal-btn-svg-use"
-                href="./images/symbol-defs.svg#close-modal"
-              ></use>
-            </svg>
-          </button>
+          <div class="modal-data-container"></div>
         </div>
-
-        <div class="modal-data-container"></div>
+        <div class="spacer"></div>
       </div>
-      <div class="spacer"></div>
     </div>
   </body>
 </html>
