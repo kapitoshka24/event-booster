@@ -17,33 +17,5 @@ img {
 body {
   overflow-x: hidden;
   height: 100vh;
-
-}
-.bg-img{
-  
-  background-color: $background-color;
-  background-image: url(../images/bg-img/noise.png);
-  background-position: center top;
-  background-repeat: repeat;
-  background-size: contain;
-}
-
-.bg-img__elements {
-  @media screen and (max-width: 767px) {
-    background-image: none;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    background-image: url(../images/bg-img/tablet.svg);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  @media screen and (min-width: 1280px) {
-    background-image: url(../images/bg-img/desktop.svg);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+  background-color: black;
 }
