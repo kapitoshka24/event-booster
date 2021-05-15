@@ -12,7 +12,7 @@ export default {
             return localStorage.setItem(key, JSON.stringify(value))
         }
         catch(error) {
-            return undefined
+            return console.error(error);
         }
     }
 }
