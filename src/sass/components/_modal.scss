@@ -78,13 +78,15 @@
 .modal-btn {
   display: block;
   padding: 0px;
-
   width: 17px;
   height: 17px;
 
   border: none;
   background: #fff2fd;
   fill: rgba(76, 0, 254, 1);
+
+  transform: scale(1);
+  transition: transitionFunc(transform);
 
   &:hover,
   &:focus {
@@ -235,7 +237,6 @@
 
 .modal-btn-buy-tickets {
   padding: 0;
-
   width: 145px;
   height: 40px;
 
@@ -248,6 +249,9 @@
   background: #4c00fe;
   border: none;
   border-radius: 5px;
+
+  transform: scale(1);
+  transition: transitionFunc(transform);
 
   &:hover,
   &:focus {
@@ -284,6 +288,8 @@
   border-radius: 5px;
   background-color: #fff2fd;
   cursor: pointer;
+  transform: scale(1);
+  transition: transitionFunc(transform);
 
   &:hover,
   &:focus {
