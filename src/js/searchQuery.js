@@ -1,5 +1,6 @@
 import api from './apiService';
 import { refs } from './refs';
+import { toggleSpinner } from './spinner';
 import eventRender from './eventRender';
 import cardContainerMkp from '../templates/card-container.hbs';
 
@@ -24,7 +25,7 @@ export function onCountrySearch() {
   // this.value - значення атрибуту value тега <option>, яке відповідає значенню countryCode
   // function declaration тому що this
   api.options.countryQuery = this.value;
-  refs.spinner.classList.remove('hidden')
+  toggleSpinner('remove');
   clearCardContainer();
   searchEventsByCountry();
 }
@@ -36,7 +37,7 @@ const searchEventsByCountry = async () => {
   } catch (error) {
     console.log('Error');
   } finally {
-    refs.spinner.classList.add('hidden');
+    toggleSpinner('add')
   }
 };
 
