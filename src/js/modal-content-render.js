@@ -6,9 +6,8 @@ export default async id => {
   eventApiService.id = id;
   try {
     const result = await eventApiService.fetchEventById();
-    appendEventContent(result);
 
-    animateButtons();
+    appendEventContent(result);
   } catch (error) {
     console.log(error);
   }
@@ -19,6 +18,8 @@ const appendEventContent = result => {
     'beforeend',
     eventContentTpl(result),
   );
+
+  animateButtons();
 };
 
 const animateButtons = () => {

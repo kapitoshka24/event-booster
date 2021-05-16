@@ -39,14 +39,16 @@
   background: #fff2fd;
 
   width: 272px;
-  min-height: auto;
+  min-height: 800px;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    min-height: 750px;
     width: 600px;
     padding: 28px 17px 56px 50px;
   }
 
   @media screen and (min-width: 1280px) {
+    min-height: 1023px;
     width: 800px;
     padding: 62px 30px 72px 30px;
     border-radius: 300px 0px;
@@ -151,11 +153,13 @@
 }
 
 .modal-event-data {
-  display: flex;
-  align-items: center;
-
   @media screen and (max-width: 767px) {
     text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
   }
 }
 
