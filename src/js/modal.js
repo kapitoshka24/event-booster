@@ -1,10 +1,17 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
+import { eventApiService } from './apiService';
 
-function onClickEvent(e) {
+async function onClickEvent(e) {
   e.preventDefault();
 
   const selectedEl = e.target;
+
+  const result = await eventApiService.fetchEventById();
+
+  if (!result) {
+    return;
+  }
 
   if (selectedEl.classList.contains('card-container')) {
     onClickCross();

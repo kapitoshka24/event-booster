@@ -1,3 +1,5 @@
+import { errorFromServer, errorFromServerById } from './pnotify';
+
 const API_KEY = '1C29h88u3svXxBVo6fuCgguwojy1aerE';
 const URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 
@@ -18,7 +20,11 @@ class EventApiService {
   async fetchData(doPagesRefresh = true) {
     const response = await fetch(
       `${URL}?size=24&keyword=${options.searchQuery}&page=${this.page}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
-    ).then(r => r.json());
+    )
+      .then(r => r.json())
+      .catch(() => {
+        errorFromServer();
+      });
 
     this.events = response._embedded ? response._embedded.events : [];
 
@@ -40,9 +46,11 @@ class EventApiService {
   }
 
   async fetchEventById() {
-    const response = await fetch(`${URL}?id=${this.id}&apikey=${API_KEY}`).then(
-      r => r.json(),
-    );
+    const response = await fetch(`${URL}?id=${this.id}&apikey=${API_KEY}`)
+      .then(r => r.json())
+      .catch(() => {
+        errorFromServerById();
+      });
 
     return response._embedded.events[0];
   }
