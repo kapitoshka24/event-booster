@@ -42,13 +42,13 @@
   min-height: auto;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 595px;
+    width: 600px;
     padding: 28px 17px 56px 50px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 924px;
-    padding: 62px 30px;
+    width: 800px;
+    padding: 62px 30px 72px 30px;
     border-radius: 300px 0px;
   }
 }
@@ -63,10 +63,13 @@
 }
 
 .modal-data-container {
-  align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 1280px) {
+    align-items: center;
+  }
 }
 
 .container-btn {
@@ -93,7 +96,7 @@
 
   border: none;
   background: #fff2fd;
-  fill: rgba(76, 0, 254, 1);
+  fill: $modal-btn-color;
   transition: transform 1000ms ease-in-out;
 
   transform: scale(1);
@@ -101,7 +104,7 @@
 
   &:hover,
   &:focus {
-    fill: rgba(220, 86, 197, 1);
+    fill: $title-text-color;
     cursor: pointer;
   }
 
@@ -191,7 +194,7 @@
 .modal-data-item-title {
   @media screen and (max-width: 1279px) {
     margin: 0px 0px 5px;
-    color: rgba(220, 86, 197, 1);
+    color: $title-text-color;
 
     font-family: Montserrat;
     font-weight: 600;
@@ -201,7 +204,7 @@
 
   @media screen and (min-width: 1280px) {
     margin: 0px 0px 7px;
-    color: rgba(220, 86, 197, 1);
+    color: $title-text-color;
     font-family: Montserrat;
     font-weight: 600;
     font-size: 24px;
@@ -259,8 +262,8 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 1);
-  background: #4c00fe;
+  color: $text-color;
+  background: $modal-btn-color;
   border: none;
   border-radius: 5px;
 
@@ -294,22 +297,20 @@
 }
 
 .modal-author-button-container {
-  position: absolute;
   min-width: 230px;
   height: 40px;
-  top: 84.1%;
-  left: 7.2%;
 
-  margin: 20px auto 0 auto;
+  display: block;
+  margin: 45px auto 0 auto;
 
-  background: rgba(76, 0, 254, 1);
-  color: rgba(76, 0, 254, 1);
+  background: $modal-btn-color;
+  color: $modal-btn-color;
   font-family: $font;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
-  border: 1px solid rgba(76, 0, 254, 1);
+  border: 1px solid $modal-btn-color;
   border-radius: 6px;
   cursor: pointer;
   transform: scale(1);
@@ -326,7 +327,7 @@
     }
   }
   button {
-    padding: 10px 15px;
+    padding: 10px 5px;
     width: 100%;
     height: 100%;
     font-family: Montserrat;
@@ -337,25 +338,14 @@
     border-radius: 5px;
 
     @include button(
-      rgb(255, 242, 253),
+      $text-color,
       'https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png',
       2300%,
       100%,
       none,
-      rgba(76, 0, 254, 1)
+      $modal-btn-color
     );
     cursor: pointer;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    top: 88.4%;
-    left: 28.6%;
-    width: 255px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    top: 90%;
-    left: 37%;
   }
 }
 
@@ -391,7 +381,7 @@
     line-height: 1.25;
 
     @include button(
-      rgba(76, 0, 254, 1),
+      $modal-btn-color,
       'https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png',
       2300%,
       100%,
