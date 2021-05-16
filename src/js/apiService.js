@@ -1,5 +1,6 @@
 const API_KEY = '1C29h88u3svXxBVo6fuCgguwojy1aerE';
 const URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
+const ATR_URL = 'https://app.ticketmaster.com/discovery/v2/attractions.json';
 
 export const options = {
   searchQuery: '',
@@ -43,8 +44,11 @@ class EventApiService {
     const response = await fetch(`${URL}?id=${this.id}&apikey=${API_KEY}`).then(
       r => r.json(),
     );
+    const eventsAuthor = await fetch(`${URL}?size=100&keyword=${response._embedded.events[0]._embedded.attractions[0].name}}&sort=date,asc&apikey=${API_KEY}`).then(
+      r => r.json(),
+    );
 
-    return response._embedded.events[0];
+    return {response: response._embedded.events[0], eventsAuthor: eventsAuthor._embedded.events};
   }
 }
 

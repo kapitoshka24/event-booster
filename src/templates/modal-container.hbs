@@ -1,3 +1,4 @@
+{{#with response}}
 <img class="modal-event-icon" src="{{#with images}}{{[9].url}}{{/with}}" width="132px" height="132px" />
 <div class="modal-event-data">
     <img class="modal-poster" src="{{#with images}}{{[7].url}}{{/with}}" width="360px" height="641px" />
@@ -79,4 +80,13 @@
         </ul>
     </ul>
 </div>
-<button class="modal-author-btn">MORE FROM THIS AUTHOR</button>
+{{/with}}
+{{#with eventsAuthor}}
+    <select class="modal-author-btn" name="author-attr" onchange="location = this.value">
+        <option>MORE FROM THIS AUTHOR</option>
+        {{#each this}}
+        <option value="{{url}}">{{#with _embedded.venues.[0].city}}{{name}}{{/with}} {{dates.start.localDate}}
+        {{/each}}
+        </ul>
+    </select>
+{{/with}}
