@@ -15,7 +15,7 @@
 
 .spinner {
   position: absolute;
-  top: 300px;
+  top: 280px;
   left: 50%;
   transform: translate(-50%, 0%);
 
@@ -23,13 +23,11 @@
   height: 35px;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    top: 170px;
-    margin: 80px auto 0 auto;
+    top: 220px;
   }
 
   @media screen and (min-width: 1280px) {
-    top: 250px;
-    margin: 100px auto 0 auto;
+    top: 300px;
   }
 }
 

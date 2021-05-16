@@ -1,10 +1,17 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
+import { eventApiService } from './apiService';
 
-function onClickEvent(e) {
+async function onClickEvent(e) {
   e.preventDefault();
 
   const selectedEl = e.target;
+
+  const result = await eventApiService.fetchEventById();
+
+  if (!result) {
+    return;
+  }
 
   if (selectedEl.classList.contains('card-container')) {
     onClickCross();
@@ -19,6 +26,7 @@ function onClickEvent(e) {
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
   refs.body.classList.remove('scroll-hidden');
+  removeListeners();
 }
 
 function scrollHidden() {
@@ -40,11 +48,30 @@ const closeModalByEscKey = evt => {
     onClickCross();
   }
 };
+
 const closeModalOnbackdropClick = evt => {
   if (evt.target === evt.currentTarget) {
     refs.modal.classList.add('is-hidden');
     onClickCross();
   }
+};
+
+const removeListeners = () => {
+  const refsAnimation = {
+    btnAnim: document.querySelectorAll('.btn-tickets'),
+    moreBtnAnim: document.querySelector(
+      '.modal-author-button-container button',
+    ),
+  };
+
+  refsAnimation.btnAnim.forEach(elem =>
+    elem.addEventListener('mouseover', () => {
+      elem.classList.remove('animation');
+    }),
+  );
+  refsAnimation.moreBtnAnim.addEventListener('mouseover', () => {
+    refsAnimation.moreBtnAnim.classList.remove('animation');
+  });
 };
 
 export {

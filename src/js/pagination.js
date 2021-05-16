@@ -3,6 +3,7 @@ import { eventApiService } from './apiService';
 import cardContainerMkp from '../templates/card-container.hbs';
 import { refs } from './refs';
 import { toggleSpinner } from './spinner';
+import { successfullRequest, emptyEvents } from './pnotify';
 
 $(async function () {
   const updatePages = async () => {
@@ -11,6 +12,7 @@ $(async function () {
     if (totalPages === 0) {
       refs.cardContainer.innerHTML = '';
       refs.paginationList.classList.add('hide-pages');
+      emptyEvents();
       toggleSpinner('add');
 
       return;
@@ -24,8 +26,8 @@ $(async function () {
         autoHidePrevious: true,
         autoHideNext: true,
         callback: async function (data) {
-          toggleSpinner('remove');
           refs.cardContainer.innerHTML = '';
+          toggleSpinner('remove');
 
           eventApiService.page = data;
           const events = (await eventApiService.fetchData(false)).events;
@@ -34,6 +36,7 @@ $(async function () {
             'beforeend',
             cardContainerMkp(events),
           );
+          successfullRequest();
           toggleSpinner('add');
         },
       });

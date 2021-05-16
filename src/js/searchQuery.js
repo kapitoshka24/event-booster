@@ -1,9 +1,15 @@
 import { options } from './apiService';
 import { toggleSpinner } from './spinner';
 
-export const addSearchQuery = el => {
-  if (el.target.name === 'search') {
-    searchEventsByQuery(el.target.value);
+export const addSearchQuery = evt => {
+  window.addEventListener('keydown', key => {
+    if (key.code === 'Enter') {
+      key.preventDefault();
+    }
+  });
+
+  if (evt.target.name === 'search') {
+    searchEventsByQuery(evt.target.value);
   }
 };
 
