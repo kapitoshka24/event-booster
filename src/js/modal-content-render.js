@@ -7,6 +7,9 @@ export default async id => {
   try {
     const result = await eventApiService.fetchEventById();
 
+    const eventTime = result.dates.start.localTime.slice(0, -3);
+    result.dates.start.localTime = eventTime;
+
     appendEventContent(result);
   } catch (error) {
     console.log(error);
