@@ -39,17 +39,15 @@
   background: #fff2fd;
 
   width: 272px;
-  min-height: 915px;
+  min-height: auto;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 595px;
-    min-height: 831px;
     padding: 28px 17px 56px 50px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 924px;
-    min-height: 1023px;
     padding: 62px 30px;
     border-radius: 300px 0px;
   }
@@ -58,7 +56,19 @@
   height: 1px;
   margin: 10% 0 1px 0;
   background: transparent;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 15vh;
+  }
 }
+
+.modal-data-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .container-btn {
   width: 35px;
   height: 35px;
@@ -136,6 +146,7 @@
 
 .modal-event-data {
   display: flex;
+  align-items: center;
 
   @media screen and (max-width: 767px) {
     text-align: center;
@@ -270,11 +281,8 @@
 }
 
 .modal-author-btn {
-  position: absolute;
-  top: 84.1%;
-  left: 7.2%;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
 
   padding: 10px 3px;
   color: rgba(76, 0, 254, 1);
@@ -297,6 +305,11 @@
     color: rgba(255, 255, 255, 1);
     transform: scale(1.1);
     transition: transitionFunc(transform);
+
+    @media screen and (max-width: 767px) {
+      transform: scale(1.04);
+      transition: transitionFunc(transform);
+    }
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {

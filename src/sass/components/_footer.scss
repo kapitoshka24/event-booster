@@ -23,6 +23,7 @@
   color: red;
   animation: heartbeat 1s infinite;
   display: inline-block;
+  margin: 0 5px;
 
   @keyframes heartbeat {
     0% {

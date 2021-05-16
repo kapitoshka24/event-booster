@@ -1,5 +1,12 @@
-* {
-  box-sizing: border-box;
+.inputs {
+  width: 270px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    width: 570px;
+  }
 }
 
 .wrapper {
@@ -13,7 +20,8 @@
 }
 
 .wrapper__input {
-  padding: 10px 30px;
+  user-select: none;
+  padding: 10px 70px 10px 30px;
   width: 270px;
   height: 40px;
 
@@ -41,4 +49,40 @@ input::placeholder {
   line-height: 1.25;
 
   color: $form-text-color;
+}
+
+.country-list {
+  user-select: none;
+  padding: 10px 60px 10px 30px;
+  width: 270px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+
+  font-family: $font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  border: 0;
+  border-radius: 20px;
+  color: $form-text-color;
+  cursor: pointer;
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url(../images/arrow-down.svg);
+  background-position: 225px 17px;
+  background-repeat: no-repeat;
+
+  &:focus {
+    background-image: url(../images/arrow-up.svg);
+    background-position: 225px 15px;
+    background-repeat: no-repeat;
+  }
 }
