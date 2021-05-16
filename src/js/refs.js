@@ -7,6 +7,7 @@ export const refs = {
   cardContainer: document.querySelector('.card-container'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
+  modalCard: document.querySelector('.modal'),
   footer: document.querySelector('.footer'),
   headerSection: document.querySelector('.header'),
   cardContainer: document.querySelector('.card-container'),

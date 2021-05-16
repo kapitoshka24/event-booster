@@ -3,7 +3,7 @@
 }
 
 .backdrop {
-  z-index: 10000;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -57,11 +57,13 @@
     border-radius: 300px 0px;
   }
 }
+
 .spacer {
   height: 1px;
-  margin: 10% 0 1px 0;
+  margin: 7% 0 1px 0;
   background: transparent;
 }
+
 .container-btn {
   width: 35px;
   height: 35px;
