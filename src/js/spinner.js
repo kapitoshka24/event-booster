@@ -27,10 +27,13 @@ if (!storage.getItem('first-visit')) {
   addFirstVisitStyles();
   setTimeout(() => {
     addSpinner('mainPart', 'beforeend');
+    window.dispatchEvent(new Event('UPDATE_PAGES'));
+
     refs.firstVisit.classList.remove('first-visit-container');
     document.querySelector('.spinner.first-visit').outerHTML = '';
     storage.setItem('first-visit', true);
   }, 2500);
 } else {
   addSpinner('mainPart', 'beforeend');
+  window.dispatchEvent(new Event('UPDATE_PAGES'));
 }
