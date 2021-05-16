@@ -24,8 +24,8 @@ $(async function () {
         autoHidePrevious: true,
         autoHideNext: true,
         callback: async function (data) {
-          toggleSpinner('remove');
           refs.cardContainer.innerHTML = '';
+          toggleSpinner('remove');
 
           eventApiService.page = data;
           const events = (await eventApiService.fetchData(false)).events;
