@@ -23,16 +23,17 @@ const addFirstVisitStyles = () => {
 };
 
 if (!storage.getItem('first-visit')) {
-  addSpinner('firstVisit', 'afterend');
-  addFirstVisitStyles();
-  setTimeout(() => {
-    addSpinner('mainPart', 'beforeend');
-    window.dispatchEvent(new Event('UPDATE_PAGES'));
-
-    refs.firstVisit.classList.remove('first-visit-container');
-    document.querySelector('.spinner.first-visit').outerHTML = '';
-    storage.setItem('first-visit', true);
-  }, 2500);
+  addSpinner('firstVisit', 'afterend');
+  addFirstVisitStyles();
+  window.addEventListener('load', function() {
+  setTimeout(() => {
+    refs.firstVisit.classList.remove('first-visit-container');
+    document.querySelector('.spinner.first-visit').outerHTML = '';
+    addSpinner('mainPart', 'beforeend');
+    window.dispatchEvent(new Event('UPDATE_PAGES'));
+    storage.setItem('first-visit', true);
+  }, 2500);
+})
 } else {
   addSpinner('mainPart', 'beforeend');
   window.dispatchEvent(new Event('UPDATE_PAGES'));
