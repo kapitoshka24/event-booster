@@ -1,0 +1,22 @@
+.main-background {
+  padding-top: 20px;
+  background-color: rgba(14, 14, 14, 1);
+  background-image: url(../images/mobile/bg-main.svg);
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    background-image: url(../images/tablet/decor.svg),
+      url(../images/tablet/bg-main.svg);
+    background-position: 50% -140px, 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, 100% 100%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 0;
+    background-image: url(../images/desktop/decor.svg),
+      url(../images/desktop/bg-main.svg);
+    background-repeat: no-repeat;
+    background-position: 50% -140px, 0 0;
+    background-size: contain, 100% 100%;
+  }
+}
