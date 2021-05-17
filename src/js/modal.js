@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
-import { eventApiService } from './apiService';
+import { eventApiService } from './api-service';
 
 async function onClickEvent(e) {
   e.preventDefault();

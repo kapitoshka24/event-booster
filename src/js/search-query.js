@@ -1,4 +1,4 @@
-import { options } from './apiService';
+import { options } from './api-service';
 import { toggleSpinner } from './spinner';
 
 export const addSearchQuery = evt => {

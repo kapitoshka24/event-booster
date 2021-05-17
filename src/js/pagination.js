@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import { eventApiService } from './apiService';
+import { eventApiService } from './api-service';
 import cardContainerMkp from '../templates/card-container.hbs';
 import { refs } from './refs';
 import { toggleSpinner } from './spinner';

@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import eventContentTpl from '../templates/modal-container.hbs';
-import { eventApiService } from './apiService';
+import { eventApiService } from './api-service';
 
 function getEventsByUniquePlace(arr) {
   const uniqueArrPlaceId = [];
