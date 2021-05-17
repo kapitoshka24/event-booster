@@ -15,7 +15,7 @@
     border-radius: 50px 0px;
     width: 108px;
     height: 101px;
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
       width: 153px;
       height: 143px;
     }
@@ -24,7 +24,7 @@
     padding-top: 9px;
     padding-right: 10px;
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     padding-top: 13px;
     padding-right: 14px;
   }
@@ -40,7 +40,7 @@
     width: 128px;
     height: 161px;
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     width: 180px;
     height: 227px;
   }
@@ -108,7 +108,7 @@
     height: 9px;
     background-image: url(../images/location.svg);
     background-repeat: no-repeat;
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
       width: 7px;
       height: 10px;
     }
