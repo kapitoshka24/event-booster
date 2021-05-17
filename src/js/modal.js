@@ -1,6 +1,8 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
-import { eventApiService } from './api-service';
+import { eventApiService} from './api-service';
+import { addSpinner } from './spinner';
+import { addClassSpinner } from './spinner';
 
 async function onClickEvent(e) {
   e.preventDefault();
@@ -18,6 +20,8 @@ async function onClickEvent(e) {
   } else {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
+    addSpinner('modalContentContainer', 'beforeend');
+    addClassSpinner({ search: '.modal .spinner', addClass: 'modal-spinner' });
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
     modalShow();
     onModalOpen(idEvent);

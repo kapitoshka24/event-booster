@@ -13,7 +13,7 @@ $(async function () {
       refs.cardContainer.innerHTML = '';
       refs.paginationList.classList.add('hide-pages');
       emptyEvents();
-      toggleSpinner('add');
+      toggleSpinner('mainPart', 'add');
 
       return;
     } else {
@@ -27,7 +27,7 @@ $(async function () {
         autoHideNext: true,
         callback: async function (data) {
           refs.cardContainer.innerHTML = '';
-          toggleSpinner('remove');
+          toggleSpinner('mainPart', 'remove');
 
           eventApiService.page = data;
           const events = (await eventApiService.fetchData(false)).events;
@@ -37,7 +37,7 @@ $(async function () {
             cardContainerMkp(events),
           );
           successfullRequest();
-          toggleSpinner('add');
+          toggleSpinner('mainPart', 'add');
         },
       });
     }

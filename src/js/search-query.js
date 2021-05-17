@@ -25,7 +25,7 @@ export function onCountrySearch() {
 
 const renderEvents = () => {
   window.dispatchEvent(new Event('UPDATE_PAGES'));
-  toggleSpinner('remove');
+  toggleSpinner('mainPart', 'remove');
 };
 
 export default { addSearchQuery, onCountrySearch };
