@@ -15,10 +15,31 @@ img {
   height: 100%;
 }
 body {
-  background-color: black;
+  background-color: #0e0e0e;
   overflow-x: hidden;
   height: 100vh;
 }
 a {
   text-decoration: none;
+}
+.background {
+  height: 100%;
+  background-image: url(../images/mobile/bg-body-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/tablet/bg-body-tablet.svg);
+    background-size: contain;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/desktop/bg-body-desktop.svg);
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1500px) {
+    background-size: contain;
+  }
 }
