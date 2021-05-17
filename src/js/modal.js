@@ -59,9 +59,7 @@ const closeModalOnbackdropClick = evt => {
 const removeListeners = () => {
   const refsAnimation = {
     btnAnim: document.querySelectorAll('.btn-tickets'),
-    moreBtnAnim: document.querySelector(
-      '.modal-author-button-container button',
-    ),
+    moreBtnAnim: document.querySelector('.modal-author-button-container'),
   };
 
   refsAnimation.btnAnim.forEach(elem =>

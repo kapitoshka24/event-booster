@@ -2,13 +2,33 @@ import { refs } from './refs';
 import eventContentTpl from '../templates/modal-container.hbs';
 import { eventApiService } from './apiService';
 
+function getEventsByUniquePlace(arr) {
+  const uniqueArrPlaceId = [];
+  const uniqueArrPlace = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      uniqueArrPlaceId.includes(arr[i]._embedded.venues[0].id) ||
+      uniqueArrPlaceId.length > 9
+    ) {
+      continue;
+    }
+    if (!uniqueArrPlaceId.includes(arr[i]._embedded.venues[0].id)) {
+      uniqueArrPlaceId.push(arr[i]._embedded.venues[0].id);
+      uniqueArrPlace.push(arr[i]);
+    }
+  }
+  return uniqueArrPlace;
+}
+
 export default async id => {
   eventApiService.id = id;
   try {
     const result = await eventApiService.fetchEventById();
 
-    const eventTime = result.dates.start.localTime.slice(0, -3);
-    result.dates.start.localTime = eventTime;
+    result.eventsAuthor = getEventsByUniquePlace(result.eventsAuthor);
+
+    const eventTime = result.response.dates.start.localTime.slice(0, -3);
+    result.response.dates.start.localTime = eventTime;
 
     appendEventContent(result);
   } catch (error) {
@@ -28,9 +48,7 @@ const appendEventContent = result => {
 const animateButtons = () => {
   const refsAnimation = {
     btnAnim: document.querySelectorAll('.btn-tickets'),
-    moreBtnAnim: document.querySelector(
-      '.modal-author-button-container button',
-    ),
+    moreBtnAnim: document.querySelector('.modal-author-button-container'),
   };
 
   refsAnimation.btnAnim.forEach(elem =>

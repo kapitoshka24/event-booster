@@ -52,7 +52,18 @@ class EventApiService {
         errorFromServerById();
       });
 
-    return response._embedded.events[0];
+    const eventsAuthor = await fetch(
+      `${URL}?size=100&keyword=${response._embedded.events[0]._embedded.attractions[0].name}}&sort=date,asc&apikey=${API_KEY}`,
+    )
+      .then(r => r.json())
+      .catch(() => {
+        errorFromServerById();
+      });
+
+    return {
+      response: response._embedded.events[0],
+      eventsAuthor: eventsAuthor._embedded.events,
+    };
   }
 }
 
