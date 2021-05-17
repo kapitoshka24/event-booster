@@ -8,8 +8,8 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   footer: document.querySelector('.footer'),
-  headerSection: document.querySelector('.header'),  
+  headerSection: document.querySelector('.header'),
   modalContentContainer: document.querySelector('.modal-data-container'),
   paginationList: document.querySelector('.pagination-list'),
-  
+  backdrop: document.querySelector('.backdrop'),
 };
