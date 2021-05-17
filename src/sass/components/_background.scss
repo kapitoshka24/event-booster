@@ -4,6 +4,7 @@
   background-image: url(../images/mobile/bg-main.svg);
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-top: 0;
     background-image: url(../images/tablet/decor.svg),
       url(../images/tablet/bg-main.svg);
     background-position: 50% -140px, 0 0;
