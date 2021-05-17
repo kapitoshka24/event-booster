@@ -22,6 +22,10 @@ body {
 a {
   text-decoration: none;
 }
+.container {
+  background-image: url(../images/desktop/noise-desktop.svg);
+  background-size: contain;
+}
 .background {
   height: 100%;
   background-image: url(../images/mobile/bg-body-mobile.svg);
