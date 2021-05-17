@@ -10,33 +10,33 @@ function onClickEvent(e) {
   } else {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
-    refs.modal.classList.remove(
-      'animate__animated',
-      'animate__lightSpeedOutRight',
-    );
-    refs.modal.classList.add(
-      'animate__animated',
-      'animate__lightSpeedInLeft',
-      'animate__faster',
-    );
+    modalShow();
   }
 }
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
   scrollHidden();
-
-  refs.modal.classList.remove('animate__animated', 'animate__lightSpeedInLeft');
-
-  refs.modal.classList.add(
-    'animate__animated',
-    'animate__lightSpeedOutRight',
-    'animate__faster',
-  );
+  modalClose();
 }
 
 function scrollHidden() {
   refs.body.classList.toggle('scroll-hidden');
+}
+
+function modalShow() {
+  refs.modal.classList.remove('fadeOut');
+  refs.modal.classList.add('fadeIn');
+  refs.modalCard.classList.remove('fadeOut');
+  refs.modalCard.classList.add('fadeIn');
+}
+
+function modalClose() {
+  refs.modalCard.classList.remove('fadeIn');
+  refs.modalCard.classList.add('fadeOut');
+
+  refs.modal.classList.remove('fadeIn');
+  refs.modal.classList.add('fadeOut');
 }
 
 export { onClickEvent, onClickCross };
