@@ -114,3 +114,35 @@
     }
   }
 }
+
+// ---
+.card-animation .card {
+  backface-visibility: visible;
+  animation-duration: 1500ms;
+  animation-name: flip;
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(20000px) scaleX(1) translateZ(0) rotateY(-1turn);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    transform: perspective(2000px) scaleX(1) translateZ(150px) rotateY(-190deg);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(2000px) scaleX(1) translateZ(150px) rotateY(-170deg);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(2000px) scale3d(0.95, 0.95, 0.95) translateZ(0)
+      rotateY(0deg);
+    animation-timing-function: ease-in;
+  }
+  to {
+    transform: perspective(2000px) scaleX(1) translateZ(0) rotateY(0deg);
+    animation-timing-function: ease-in;
+  }
+}
