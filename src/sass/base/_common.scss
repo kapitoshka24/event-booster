@@ -35,7 +35,8 @@ a {
   }
 
   @media screen and (min-width: 1280px) {
-    background-image: url(../images/desktop/bg-body-desktop.svg);
+    background-image: url(../images/desktop/noise-desktop.svg),
+      url(../images/desktop/bg-body-desktop.svg);
     background-size: cover;
   }
 
