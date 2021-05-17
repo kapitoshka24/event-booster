@@ -236,6 +236,13 @@
 
 .price {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  & span{
+    display: flex;
+    align-items: center;
+  }
 }
 
 .modal-price-barcode {
