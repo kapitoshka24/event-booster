@@ -22,6 +22,8 @@ async function onClickEvent(e) {
     scrollHidden();
     addSpinner('modalContentContainer', 'beforeend');
     addClassSpinner({ search: '.modal .spinner', addClass: 'modal-spinner' });
+    addClassSpinner({ search: '.modal .spinner-container', addClass: 'modal-spinner' });
+    addClassSpinner({ search: '.modal .dot-pulse', addClass: 'modal-spinner' });
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
     modalShow();
     onModalOpen(idEvent);
