@@ -90,12 +90,8 @@ const removeListeners = () => {
     btnCont: document.querySelector('.modal-buy-button-container'),
   };
 
-  // refsA.btnAnim.addEventListener('mouseover', () => {
   refsA.btnAnim.classList.remove('animation');
-  // });
-  // refsA.btnCont.addEventListener('mouseover', () => {
   refsA.btnCont.classList.remove('anim');
-  // });
 };
 
 export {

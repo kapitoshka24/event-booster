@@ -1,6 +1,6 @@
 import { errorFromServer, errorFromServerById } from './pnotify';
 
-const API_KEY = 'ARJZnVEmUrYNGar66goghRYaXKGawgDn';
+const API_KEY = '1C29h88u3svXxBVo6fuCgguwojy1aerE';
 const URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 
 export const options = {
