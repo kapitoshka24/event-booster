@@ -31,6 +31,10 @@ export default async id => {
     result.response.dates.start.localTime = eventTime;
 
     appendEventContent(result);
+
+    if (!result.response.priceRanges) {
+      document.querySelector('.btn-tickets').setAttribute('disabled', 'disabled');
+    }
   } catch (error) {
     console.log(error);
   }

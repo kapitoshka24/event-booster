@@ -36,12 +36,12 @@
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
             </p>
         </li>
-        <ul class="modal-event-data-list">
+        <ul class="modal-event-data-list modal-price-list">
             <li>
                 <h3 class="modal-data-item-title">PRICES</h3>
             </li>
             <li class="modal-data-item">
-                <p class="modal-data-item-text price">
+                <p class="modal-data-item-text">
                     <span>
                         <svg class="modal-price-barcode">
                             <use href="./images/symbol-defs.svg#barcode"></use>
@@ -70,7 +70,6 @@
                         </svg>
                     </span>
                     VIP
-                    {{!-- треба уточнити --}}
                     {{#with priceRanges}}
                         {{#if [2].type}}{{[2].min}}-{{else}}{{/if}}{{#if [2].type}}{{[2].max}}{{else}}-{{/if}}
                         {{#if [2].type}}{{[2].currency}}{{else}}-{{/if}}
