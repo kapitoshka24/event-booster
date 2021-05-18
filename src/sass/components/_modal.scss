@@ -381,7 +381,7 @@
 
 .modal-buy-button-container button:disabled {
   background: rgba(102, 102, 102, 0.8);
-  pointer-events: none;
+  cursor: default;
 }
 
 .animation {
@@ -394,6 +394,16 @@
   }
 }
 
+.anim {
+  transform: scale(1);
+  transition: transitionFunc(transform);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    transition: transitionFunc(transform);
+  }
+}
 .mas {
   position: absolute;
   color: #fff;

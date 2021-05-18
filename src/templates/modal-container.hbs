@@ -25,7 +25,7 @@
                 {{#if [0].name}}
                 {{[0].name}}
                 {{else}}
-                Unknown place
+                No place yet :(
                 {{/if}}
                 {{/with}}
             </p>
@@ -45,14 +45,13 @@
                     <use href="./images/symbol-defs.svg#barcode"></use>
                 </svg>
                 <p class="modal-data-item-text">
-                    Standard
                     {{#if priceRanges}}
                     {{#with priceRanges}}
                         {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
                         {{#if [0].type}}{{[0].currency}}{{/if}}
                     {{/with}}
                     {{else}}
-                    unknown
+                    No price yet :(
                     {{/if}}
                 </p>
             </li>
