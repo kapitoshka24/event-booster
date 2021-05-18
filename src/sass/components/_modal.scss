@@ -194,40 +194,74 @@
 
   @media screen and (min-width: 768px) {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
 .modal-poster {
-  display: none;
-  object-fit: cover;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    display: block;
-    margin-right: 30px;
-    width: 233px;
-    height: 416px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    height: auto;
+    align-items: center;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
   }
 
   @media screen and (min-width: 1280px) {
-    display: block;
-    margin-right: 60px;
-    width: 360px;
-    height: 641px;
+    max-width: 600px;
   }
 }
 
+.modal-event-data-list.info {
+  @media screen and(min-width:768px) {
+    margin: 0 auto;
+  }
+}
 .modal-event-data-list {
   margin: 0;
   padding: 0;
+  @media screen and(min-width:768px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.modal-data-item:not(:last-child) {
-  margin-bottom: 20px;
-
-  @media screen and (max-width: 1279px) {
-    margin-bottom: 10px;
+.modal-data-item {
+  &:not(:last-child) {
+    margin-bottom: 15px;
   }
+
+  @media screen and(min-width:768px) {
+    display: flex;
+    align-items: center;
+    &-flex-2 {
+      display: flex;
+      flex-direction: column;
+    }
+    &-flex-3 {
+      display: flex;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &-flex-3 {
+      margin: 10px 0 25px 0;
+    }
+  }
+}
+
+.modal-data-item-title.price {
+  margin: 0;
+  text-align: center;
 }
 
 .modal-data-item-flex {
@@ -236,21 +270,37 @@
 
   @media screen and (max-width: 767px) {
     justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+  &.price-flex {
+    margin-bottom: 0;
+
+    @media screen and (max-width: 767px) {
+      margin: 5px 0 10px 0;
+    }
   }
 }
 
 .modal-data-item-title {
-  @media screen and (max-width: 1279px) {
-    margin: 0px 0px 5px;
-    color: $title-text-color;
+  color: $title-text-color;
+  margin: 0px 0px 5px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.21;
 
-    font-family: Montserrat;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.21;
+  @media screen and (min-width: 768px) {
+    min-width: 95px;
+    margin-right: 5px;
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
+    min-width: 120px;
     margin: 0px 0px 7px;
     color: $title-text-color;
     font-family: Montserrat;
@@ -310,12 +360,11 @@
 }
 
 .modal-author-button-container {
-  min-width: 230px;
   max-width: 248px;
   height: 40px;
 
   display: block;
-  margin: 45px auto 0 auto;
+  margin: 0 auto;
 
   background: $text-color;
   color: $modal-btn-color;
@@ -330,10 +379,7 @@
   transform: scale(1);
   transition: transitionFunc(transform);
 
-  @media screen and (max-width: 767px) {
-    margin: 23px auto 0 auto;
-    min-width: 200px;
-  }
+  min-width: 200px;
 
   &:hover,
   &:focus {
@@ -347,10 +393,8 @@
 }
 
 .modal-buy-button-container {
-  @media screen and (max-width: 767px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  margin-left: auto;
+  margin-right: auto;
 
   position: relative;
 

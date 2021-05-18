@@ -13,9 +13,16 @@ async function onClickEvent(e) {
     return;
   }
 
-  if (selectedEl.classList.contains('card-container')) {
+  if (
+    selectedEl.classList.contains('card-container') &
+    !refs.modal.classList.contains('is-hidden')
+  ) {
     onClickCross();
-  } else {
+  }
+  if (
+    selectedEl.offsetParent.classList.contains('card') ||
+    selectedEl.classList.contains('card')
+  ) {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');

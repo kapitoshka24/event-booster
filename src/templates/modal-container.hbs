@@ -1,8 +1,7 @@
 {{#with response}}
 <img class="modal-event-icon" src="{{#with images}}{{[9].url}}{{/with}}" width="132px" height="132px" />
 <div class="modal-event-data">
-    <img class="modal-poster" src="{{#with images}}{{[7].url}}{{/with}}" width="360px" height="641px" />
-    <ul class="modal-event-data-list">
+    <ul class="modal-event-data-list info">
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">INFO</h3>
             <p class="modal-data-item-text">
@@ -11,12 +10,15 @@
         </li>
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">WHEN</h3>
-            <p class="modal-data-item-text date">{{dates.start.localDate}}</p>
-            <p class="modal-data-item-text">{{dates.start.localTime}}</p>
+            <div class="modal-data-item-flex-2">
+                <p class="modal-data-item-text date">{{dates.start.localDate}}</p>
+                <p class="modal-data-item-text">{{dates.start.localTime}}</p>
+            </div>
         </li>
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">WHERE</h3>
-            <p class="modal-data-item-text сity-country">
+            <div class="modal-data-item-flex-2">
+                <p class="modal-data-item-text сity-country">
                 {{#with _embedded.venues.[0].city}}{{name}}{{/with}},
                 {{#with _embedded.venues.[0].country}}{{name}}{{/with}}
             </p>
@@ -28,7 +30,7 @@
                 No place yet :(
                 {{/if}}
                 {{/with}}
-            </p>
+            </p></div>
         </li>
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">WHO</h3>
@@ -36,34 +38,35 @@
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
             </p>
         </li>
-        <ul class="modal-event-data-list">
+    </ul>
+    <img class="modal-poster" src="{{#with images}}{{[7].url}}{{/with}}" width="360px" height="641px" />
+    <ul class="modal-event-data-list">
+        <div class="modal-data-item-flex-3">
             <li>
-                <h3 class="modal-data-item-title">PRICES</h3>
-            </li>
-            <li class="modal-data-item modal-data-item-flex">
-                <svg class="modal-price-barcode">
-                    <use href="./images/symbol-defs.svg#barcode"></use>
-                </svg>
-                <p class="modal-data-item-text">
-                    {{#if priceRanges}}
-                    {{#with priceRanges}}
-                        {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
-                        {{#if [0].type}}{{[0].currency}}{{/if}}
-                    {{/with}}
-                    {{else}}
-                    No price yet :(
-                    {{/if}}
-                </p>
-            </li>
-
-            <li class="modal-data-item">
-                <div class="modal-buy-button-container">
-                    <span class="mas">BUY TICKETS</span>
+            <h3 class="modal-data-item-title price">PRICES</h3>
+        </li>
+        <li class="modal-data-item modal-data-item-flex price-flex">
+            <svg class="modal-price-barcode">
+                <use href="./images/symbol-defs.svg#barcode"></use>
+            </svg>
+            <p class="modal-data-item-text">
+                {{#if priceRanges}}
+                {{#with priceRanges}}
+                {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
+                {{#if [0].type}}{{[0].currency}}{{/if}}
+                {{/with}}
+                {{else}}
+                No price yet :(
+                {{/if}}
+            </p>
+        </li>
+        <li class="modal-data-item">
+            <div class="modal-buy-button-container">
+                <span class="mas">BUY TICKETS</span>
                 <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
-                </div>
-
-            </li>
-        </ul>
+            </div>
+        </li>
+        </div>
     </ul>
 </div>
 
