@@ -19,18 +19,19 @@
             <h3 class="modal-data-item-title">WHERE</h3>
             <div class="modal-data-item-flex-2">
                 <p class="modal-data-item-text сity-country">
-                {{#with _embedded.venues.[0].city}}{{name}}{{/with}},
-                {{#with _embedded.venues.[0].country}}{{name}}{{/with}}
-            </p>
-            <p class="modal-data-item-text">
-                {{#with _embedded.venues}}
-                {{#if [0].name}}
-                {{[0].name}}
-                {{else}}
-                No place yet :(
-                {{/if}}
-                {{/with}}
-            </p></div>
+                    {{#with _embedded.venues.[0].city}}{{name}}{{/with}},
+                    {{#with _embedded.venues.[0].country}}{{name}}{{/with}}
+                </p>
+                <p class="modal-data-item-text">
+                    {{#with _embedded.venues}}
+                    {{#if [0].name}}
+                    {{[0].name}}
+                    {{else}}
+                    No place yet :(
+                    {{/if}}
+                    {{/with}}
+                </p>
+            </div>
         </li>
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">WHO</h3>
@@ -43,29 +44,29 @@
     <ul class="modal-event-data-list">
         <div class="modal-data-item-flex-3">
             <li>
-            <h3 class="modal-data-item-title price">PRICES</h3>
-        </li>
-        <li class="modal-data-item modal-data-item-flex price-flex">
-            <svg class="modal-price-barcode">
-                <use href="./images/symbol-defs.svg#barcode"></use>
-            </svg>
-            <p class="modal-data-item-text">
-                {{#if priceRanges}}
-                {{#with priceRanges}}
-                {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
-                {{#if [0].type}}{{[0].currency}}{{/if}}
-                {{/with}}
-                {{else}}
-                No price yet :(
-                {{/if}}
-            </p>
-        </li>
-        <li class="modal-data-item">
-            <div class="modal-buy-button-container">
-                <span class="mas">BUY TICKETS</span>
-                <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
-            </div>
-        </li>
+                <h3 class="modal-data-item-title price">PRICES</h3>
+            </li>
+            <li class="modal-data-item modal-data-item-flex price-flex">
+                <svg class="modal-price-barcode">
+                    <use href="./images/symbol-defs.svg#barcode"></use>
+                </svg>
+                <p class="modal-data-item-text">
+                    {{#if priceRanges}}
+                    {{#with priceRanges}}
+                    {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
+                    {{#if [0].type}}{{[0].currency}}{{/if}}
+                    {{/with}}
+                    {{else}}
+                    No price yet :(
+                    {{/if}}
+                </p>
+            </li>
+            <li class="modal-data-item">
+                <div class="modal-buy-button-container" tabindex="0">
+                    <span class="mas">BUY TICKETS</span>
+                    <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
+                </div>
+            </li>
         </div>
     </ul>
 </div>

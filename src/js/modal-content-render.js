@@ -60,16 +60,11 @@ const appendEventContent = result => {
 const animateButtons = () => {
   const refsA = {
     btnAnim: document.querySelector('.btn-tickets'),
-    btnContainer: document.querySelector('.modal-buy-button-container'),
   };
 
   if (refsA.btnAnim.disabled === false) {
     refsA.btnAnim.addEventListener('mouseover', () => {
       refsA.btnAnim.classList.add('animation');
-    });
-
-    refsA.btnContainer.addEventListener('mouseover', () => {
-      refsA.btnContainer.classList.add('anim');
     });
   }
 };
