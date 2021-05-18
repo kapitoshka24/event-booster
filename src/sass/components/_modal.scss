@@ -523,3 +523,15 @@
     mask-position: 0 0;
   }
 }
+
+.jdun::after {
+  content: '';
+  display: inline-block;
+
+  margin-right: 3px;
+  width: 21px;
+  height: 24px;
+  background-image: url(../images/jdun/jdun-1.svg);
+
+  background-repeat: no-repeat;
+}
