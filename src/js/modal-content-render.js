@@ -1,6 +1,8 @@
 import { refs } from './refs';
 import eventContentTpl from '../templates/modal-container.hbs';
 import { eventApiService } from './api-service';
+import { toggleSpinner } from './spinner';
+import { addClassSpinner } from './spinner';
 
 function getEventsByUniquePlace(arr) {
   const uniqueArrPlaceId = [];
@@ -41,6 +43,8 @@ export default async id => {
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    toggleSpinner('modalContentContainer', 'add');
   }
 };
 
