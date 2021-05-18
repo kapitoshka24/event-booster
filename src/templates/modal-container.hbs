@@ -25,7 +25,7 @@
                 {{#if [0].name}}
                 {{[0].name}}
                 {{else}}
-                Unknown place
+                No place yet :(
                 {{/if}}
                 {{/with}}
             </p>
@@ -40,18 +40,19 @@
             <li>
                 <h3 class="modal-data-item-title">PRICES</h3>
             </li>
-            <li class="modal-data-item">
-                <p class="modal-data-item-text price">
-                    <span>
-                        <svg class="modal-price-barcode">
-                            <use href="./images/symbol-defs.svg#barcode"></use>
-                        </svg>
-                    </span>
-                    Standard
+            <li class="modal-data-item modal-data-item-flex">
+                <svg class="modal-price-barcode">
+                    <use href="./images/symbol-defs.svg#barcode"></use>
+                </svg>
+                <p class="modal-data-item-text">
+                    {{#if priceRanges}}
                     {{#with priceRanges}}
-                        {{#if [0].type}}{{[0].min}}-{{else}}unknown{{/if}}{{#if [0].type}}{{[0].max}}{{else}}unknown{{/if}}
-                        {{#if [0].type}}{{[0].currency}}{{else}}-{{/if}}
+                        {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
+                        {{#if [0].type}}{{[0].currency}}{{/if}}
                     {{/with}}
+                    {{else}}
+                    No price yet :(
+                    {{/if}}
                 </p>
             </li>
 
@@ -61,27 +62,6 @@
                 <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
                 </div>
 
-            </li>
-            <li class="modal-data-item">
-                <p class="modal-data-item-text price">
-                    <span>
-                        <svg width="29px" height="19px" class="modal-price-barcode">
-                            <use href="./images/symbol-defs.svg#barcode"></use>
-                        </svg>
-                    </span>
-                    VIP
-                    {{!-- треба уточнити --}}
-                    {{#with priceRanges}}
-                        {{#if [2].type}}{{[2].min}}-{{else}}{{/if}}{{#if [2].type}}{{[2].max}}{{else}}-{{/if}}
-                        {{#if [2].type}}{{[2].currency}}{{else}}-{{/if}}
-                    {{/with}}
-                </p>
-            </li>
-            <li class="modal-data-item">
-                <div class="modal-buy-button-container">
-                    <span class="mas">BUY TICKETS</span>
-                    <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
-                </div>
             </li>
         </ul>
     </ul>
