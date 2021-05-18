@@ -249,39 +249,6 @@
   }
 }
 
-// .modal-btn-buy-tickets {
-//   padding: 0;
-//   width: 145px;
-//   height: 40px;
-
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 1.25;
-//   color: $text-color;
-//   background: $modal-btn-color;
-//   border: none;
-//   border-radius: 5px;
-
-//   transform: scale(1);
-//   transition: transitionFunc(transform);
-
-//   &:hover,
-//   &:focus {
-//     transform: scale(1.1);
-//     transition: transitionFunc(transform);
-//     cursor: pointer;
-//   }
-// }
-
-// .btn-tickets:not(:last-child) {
-//   margin-bottom: 31px;
-
-//   @media screen and (max-width: 1279px) {
-//     margin-bottom: 20px;
-//   }
-// }
 .btn-tickets:first-child {
   margin-bottom: 0;
 }
@@ -346,14 +313,6 @@
   overflow: hidden;
   background: #dc56c5;
   border-radius: 5px;
-  // transform: scale(1);
-  // transition: transitionFunc(transform);
-
-  // &:hover,
-  // &:focus {
-  //   transform: scale(1.1);
-  //   transition: transitionFunc(transform);
-  // }
 
   button {
     width: 100%;
