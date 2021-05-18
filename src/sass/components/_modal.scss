@@ -204,16 +204,22 @@
     display: none;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: flex;
     height: auto;
     align-items: center;
     max-width: 500px;
     margin: 20px auto 0 auto;
+    border-radius: 100px 0;
   }
 
   @media screen and (min-width: 1280px) {
     max-width: 600px;
+    display: flex;
+    height: auto;
+    align-items: center;
+    margin: 20px auto 0 auto;
+    border-radius: 150px 0px;
   }
 }
 
@@ -360,7 +366,6 @@
 }
 
 .modal-author-button-container {
-  max-width: 248px;
   height: 40px;
 
   display: block;
@@ -389,6 +394,10 @@
     @media screen and (max-width: 767px) {
       transform: scale(1);
     }
+  }
+
+  @media screen and(max-width: 768px) {
+    max-width: 248px;
   }
 }
 
