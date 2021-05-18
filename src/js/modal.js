@@ -27,14 +27,9 @@ function scrollHidden() {
 function modalShow() {
   refs.modal.classList.remove('fadeOut');
   refs.modal.classList.add('fadeIn');
-  refs.modalCard.classList.remove('fadeOut');
-  refs.modalCard.classList.add('fadeIn');
 }
 
 function modalClose() {
-  refs.modalCard.classList.remove('fadeIn');
-  refs.modalCard.classList.add('fadeOut');
-
   refs.modal.classList.remove('fadeIn');
   refs.modal.classList.add('fadeOut');
 }
