@@ -383,7 +383,6 @@
   cursor: pointer;
   transform: scale(1);
   transition: transitionFunc(transform);
-
   min-width: 200px;
 
   &:hover,
@@ -393,6 +392,19 @@
 
     @media screen and (max-width: 767px) {
       transform: scale(1);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 23px auto 0 auto;
+    min-width: 200px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
     }
   }
 
@@ -435,6 +447,12 @@
 
   transform: scale(1);
   transition: transitionFunc(transform);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    transition: transitionFunc(transform);
+  }
 }
 
 .modal-buy-button-container button:disabled {
@@ -442,24 +460,28 @@
   cursor: default;
 }
 
-.animation {
-  -webkit-animation: animationOut 0.7s steps(22) forwards;
-  animation: animationOut 0.7s steps(22) forwards;
+@media screen and (min-width: 1279px) {
+  .animation {
+    -webkit-animation: animationOut 0.7s steps(22) forwards;
+    animation: animationOut 0.7s steps(22) forwards;
 
-  &:hover {
-    -webkit-animation: animationIn 0.7s steps(22) forwards;
-    animation: animationIn 0.7s steps(22) forwards;
+    &:hover,
+    &:focus {
+      -webkit-animation: animationIn 0.7s steps(22) forwards;
+      animation: animationIn 0.7s steps(22) forwards;
+    }
   }
 }
 
 .anim {
   transform: scale(1);
   transition: transitionFunc(transform);
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
+  @media screen and (min-width: 1279px) {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
+    }
   }
 }
 .mas {
