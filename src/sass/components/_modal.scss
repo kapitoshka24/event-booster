@@ -101,16 +101,10 @@
   fill: $modal-btn-color;
   transition: transform 1000ms ease-in-out;
 
-  transform: scale(1);
-  transition: transitionFunc(transform);
-
   &:hover,
   &:focus {
     fill: $title-text-color;
     cursor: pointer;
-
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
   }
 
   @media screen and (min-width: 1280px) {
@@ -194,9 +188,9 @@
   }
 }
 
-.modal-price-list > li:nth-last-child(1),
-.modal-price-list > li:nth-last-child(2) {
-  display: none;
+.modal-data-item-flex {
+  display: flex;
+  align-items: center;
 }
 
 .modal-data-item-title {
@@ -245,7 +239,6 @@
 
 .modal-price-barcode {
   margin-right: 13px;
-  vertical-align: middle;
 
   width: 29px;
   height: 19px;
@@ -256,38 +249,41 @@
   }
 }
 
-.modal-btn-buy-tickets {
-  padding: 0;
-  width: 145px;
-  height: 40px;
+// .modal-btn-buy-tickets {
+//   padding: 0;
+//   width: 145px;
+//   height: 40px;
 
-  font-family: $font;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: $text-color;
-  background: $modal-btn-color;
-  border: none;
-  border-radius: 5px;
+//   font-family: $font;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 1.25;
+//   color: $text-color;
+//   background: $modal-btn-color;
+//   border: none;
+//   border-radius: 5px;
 
-  transform: scale(1);
-  transition: transitionFunc(transform);
+//   transform: scale(1);
+//   transition: transitionFunc(transform);
 
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
-    cursor: pointer;
-  }
-}
+//   &:hover,
+//   &:focus {
+//     transform: scale(1.1);
+//     transition: transitionFunc(transform);
+//     cursor: pointer;
+//   }
+// }
 
-.btn-tickets:not(:last-child) {
-  margin-bottom: 31px;
+// .btn-tickets:not(:last-child) {
+//   margin-bottom: 31px;
 
-  @media screen and (max-width: 1279px) {
-    margin-bottom: 20px;
-  }
+//   @media screen and (max-width: 1279px) {
+//     margin-bottom: 20px;
+//   }
+// }
+.btn-tickets:first-child {
+  margin-bottom: 0;
 }
 
 @mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
@@ -378,6 +374,9 @@
     );
     cursor: pointer;
   }
+
+  transform: scale(1);
+  transition: transitionFunc(transform);
 }
 
 .modal-buy-button-container button:disabled {
