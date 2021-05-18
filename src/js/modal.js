@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
-import { eventApiService} from './api-service';
+import { eventApiService } from './api-service';
 import { addSpinner } from './spinner';
 import { addClassSpinner } from './spinner';
 
@@ -29,7 +29,10 @@ async function onClickEvent(e) {
     scrollHidden();
     addSpinner('modalContentContainer', 'beforeend');
     addClassSpinner({ search: '.modal .spinner', addClass: 'modal-spinner' });
-    addClassSpinner({ search: '.modal .spinner-container', addClass: 'modal-spinner' });
+    addClassSpinner({
+      search: '.modal .spinner-container',
+      addClass: 'modal-spinner',
+    });
     addClassSpinner({ search: '.modal .dot-pulse', addClass: 'modal-spinner' });
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
     modalShow();
@@ -84,11 +87,15 @@ const closeModalOnbackdropClick = evt => {
 const removeListeners = () => {
   const refsA = {
     btnAnim: document.querySelector('.btn-tickets'),
+    btnCont: document.querySelector('.modal-buy-button-container'),
   };
 
-  refsA.btnAnim.addEventListener('mouseover', () => {
-    refsA.btnAnim.classList.remove('animation');
-  });
+  // refsA.btnAnim.addEventListener('mouseover', () => {
+  refsA.btnAnim.classList.remove('animation');
+  // });
+  // refsA.btnCont.addEventListener('mouseover', () => {
+  refsA.btnCont.classList.remove('anim');
+  // });
 };
 
 export {

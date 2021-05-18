@@ -445,17 +445,6 @@
     );
     cursor: pointer;
   }
-
-  transform: scale(1);
-  transition: transitionFunc(transform);
-
-  @media screen and(min-width:1280px) {
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
-      transition: transitionFunc(transform);
-    }
-  }
 }
 
 .modal-buy-button-container button:disabled {
@@ -472,6 +461,21 @@
     &:focus {
       -webkit-animation: animationIn 0.7s steps(22) forwards;
       animation: animationIn 0.7s steps(22) forwards;
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .anim {
+    transform: scale(1);
+    transition: transitionFunc(transform);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
     }
   }
 }
