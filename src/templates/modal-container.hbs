@@ -46,10 +46,14 @@
                 </svg>
                 <p class="modal-data-item-text">
                     Standard
+                    {{#if priceRanges}}
                     {{#with priceRanges}}
                         {{#if [0].type}}{{[0].min}}{{/if}}-{{#if [0].type}}{{[0].max}}{{/if}}
                         {{#if [0].type}}{{[0].currency}}{{/if}}
                     {{/with}}
+                    {{else}}
+                    unknown
+                    {{/if}}
                 </p>
             </li>
 
