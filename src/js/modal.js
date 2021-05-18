@@ -19,6 +19,7 @@ async function onClickEvent(e) {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
+    modalShow();
     onModalOpen(idEvent);
   }
 }
@@ -26,12 +27,23 @@ async function onClickEvent(e) {
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
   refs.body.classList.remove('scroll-hidden');
+  modalClose();
   removeListeners();
 }
 
 function scrollHidden() {
   refs.body.classList.add('scroll-hidden');
   clearModalContainer();
+}
+
+function modalShow() {
+  refs.modal.classList.remove('fadeOut');
+  refs.modal.classList.add('fadeIn');
+}
+
+function modalClose() {
+  refs.modal.classList.remove('fadeIn');
+  refs.modal.classList.add('fadeOut');
 }
 
 const clearModalContainer = () => {
