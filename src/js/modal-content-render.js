@@ -31,6 +31,12 @@ export default async id => {
     result.response.dates.start.localTime = eventTime;
 
     appendEventContent(result);
+
+    if (!result.response.priceRanges) {
+      document
+        .querySelector('.btn-tickets')
+        .setAttribute('disabled', 'disabled');
+    }
   } catch (error) {
     console.log(error);
   }
@@ -46,17 +52,18 @@ const appendEventContent = result => {
 };
 
 const animateButtons = () => {
-  const refsAnimation = {
-    btnAnim: document.querySelectorAll('.btn-tickets'),
-    moreBtnAnim: document.querySelector('.modal-author-button-container'),
+  const refsA = {
+    btnAnim: document.querySelector('.btn-tickets'),
+    btnContainer: document.querySelector('.modal-buy-button-container'),
   };
 
-  refsAnimation.btnAnim.forEach(elem =>
-    elem.addEventListener('mouseover', () => {
-      elem.classList.add('animation');
-    }),
-  );
-  refsAnimation.moreBtnAnim.addEventListener('mouseover', () => {
-    refsAnimation.moreBtnAnim.classList.add('animation');
-  });
+  if (refsA.btnAnim.disabled === false) {
+    refsA.btnAnim.addEventListener('mouseover', () => {
+      refsA.btnAnim.classList.add('animation');
+    });
+    console.dir(refsA.btnContainer);
+    refsA.btnContainer.addEventListener('mouseover', () => {
+      refsA.btnContainer.classList.add('anim');
+    });
+  }
 };
