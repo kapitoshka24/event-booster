@@ -9,15 +9,27 @@ function trackScroll() {
 
   if (scrolled > coords) {
     refs.goTopBtn.classList.add('back_to_top-show');
+    btnBackToTopShow();
   }
   if (scrolled < coords) {
     refs.goTopBtn.classList.remove('back_to_top-show');
+    btnBackToTopHidden();
   }
 }
 
 function backToTop() {
   if (window.pageYOffset > 0) {
     window.scrollBy(0, -80);
-    setTimeout(backToTop, 0);
+    setTimeout(backToTop, 15);
   }
+}
+
+function btnBackToTopShow() {
+  refs.goTopBtn.classList.remove('fadeOut');
+  refs.goTopBtn.classList.add('fadeIn');
+}
+
+function btnBackToTopHidden() {
+  refs.goTopBtn.classList.remove('fadeIn');
+  refs.goTopBtn.classList.add('fadeOut');
 }
