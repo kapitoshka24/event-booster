@@ -323,9 +323,10 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
-
+    @media screen and (min-width: 1270px) {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
+    }
     @media screen and (max-width: 767px) {
       transform: scale(1);
     }
@@ -348,10 +349,15 @@
   transform: scale(1);
   transition: transitionFunc(transform);
 
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
+  @media screen and (min-width: 1270px) {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
+    }
+    .animation:not(:hover):focus {
+      background: #4c00fe;
+    }
   }
 
   button {
@@ -379,9 +385,11 @@
   -webkit-animation: animationOut 0.7s steps(22) forwards;
   animation: animationOut 0.7s steps(22) forwards;
 
-  &:hover {
-    -webkit-animation: animationIn 0.7s steps(22) forwards;
-    animation: animationIn 0.7s steps(22) forwards;
+  @media screen and (min-width: 1270px) {
+    &:hover {
+      -webkit-animation: animationIn 0.7s steps(22) forwards;
+      animation: animationIn 0.7s steps(22) forwards;
+    }
   }
 }
 
@@ -421,4 +429,28 @@
     -webkit-mask-position: 0 0;
     mask-position: 0 0;
   }
+}
+
+.maps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  // text-decoration: underline;
+}
+
+.maps::before {
+  content: '';
+  display: inline-block;
+
+  margin-right: 3px;
+  width: 21px;
+  height: 24px;
+  background-image: url(../images/modal/loc-1.svg);
+
+  background-repeat: no-repeat;
+  // @media screen and (min-width: 768px) {
+  //   width: 7px;
+  //   height: 10px;
+  // }
 }
