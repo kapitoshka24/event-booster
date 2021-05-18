@@ -36,7 +36,7 @@
   padding: 75px 17px 104px 12px;
 
   border-radius: 150px 0px;
-  background: #fff2fd;
+  background: $modal-background;
 
   width: 272px;
   min-height: 800px;
@@ -97,7 +97,7 @@
   height: 17px;
 
   border: none;
-  background: #fff2fd;
+  background: $modal-background;
   fill: $modal-btn-color;
   transition: transform 1000ms ease-in-out;
 
@@ -191,6 +191,7 @@
 .modal-data-item-flex {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .modal-data-item-title {
@@ -311,7 +312,7 @@
   width: 145px;
   height: 40px;
   overflow: hidden;
-  background: #dc56c5;
+  background: $title-text-color;
   border-radius: 5px;
 
   button {
@@ -329,7 +330,7 @@
       2300%,
       100%,
       none,
-      #fff
+      $text-color
     );
     cursor: pointer;
   }
@@ -365,7 +366,7 @@
 }
 .mas {
   position: absolute;
-  color: #fff;
+  color: $text-color;
   text-align: center;
   width: 100%;
   font-family: Montserrat;

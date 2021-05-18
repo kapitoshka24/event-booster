@@ -15,9 +15,10 @@ img {
   height: 100%;
 }
 body {
-  background-color: #0e0e0e;
+  background-color: $body-color;
   overflow-x: hidden;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;

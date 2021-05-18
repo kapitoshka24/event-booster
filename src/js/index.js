@@ -16,6 +16,7 @@ import debounce from 'lodash.debounce';
 import './modal-content-render';
 import './pagination';
 import './buy-ticket';
+import './btn-back-to-top';
 
 refs.form.addEventListener('input', debounce(addSearchQuery, 500));
 refs.form.insertAdjacentHTML('afterbegin', searchFormInputMkp());

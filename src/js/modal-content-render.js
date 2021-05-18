@@ -61,7 +61,7 @@ const animateButtons = () => {
     refsA.btnAnim.addEventListener('mouseover', () => {
       refsA.btnAnim.classList.add('animation');
     });
-    console.dir(refsA.btnContainer);
+
     refsA.btnContainer.addEventListener('mouseover', () => {
       refsA.btnContainer.classList.add('anim');
     });
