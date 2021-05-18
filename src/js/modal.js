@@ -19,16 +19,16 @@ async function onClickEvent(e) {
     refs.modal.classList.remove('is-hidden');
     scrollHidden();
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
-    onModalOpen(idEvent);
     modalShow();
+    onModalOpen(idEvent);
   }
 }
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
   refs.body.classList.remove('scroll-hidden');
-  removeListeners();
   modalClose();
+  removeListeners();
 }
 
 function scrollHidden() {
