@@ -27,8 +27,10 @@ export default async id => {
 
     result.eventsAuthor = getEventsByUniquePlace(result.eventsAuthor);
 
-    const eventTime = result.response.dates.start.localTime.slice(0, -3);
-    result.response.dates.start.localTime = eventTime;
+    if (result.response.dates.start.localTime) {
+      const eventTime = result.response.dates.start.localTime.slice(0, -3);
+      result.response.dates.start.localTime = eventTime;
+    }
 
     appendEventContent(result);
 
