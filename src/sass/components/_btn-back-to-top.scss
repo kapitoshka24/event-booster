@@ -4,7 +4,7 @@ $peakopacity: 0.7;
 
 .back_to_top {
   position: fixed;
-  bottom: 80px;
+  bottom: 60px;
   right: 15px;
   z-index: 9999;
   width: 10px;
@@ -40,25 +40,27 @@ $peakopacity: 0.7;
     width: 13px;
     height: 13px;
     right: 35px;
+    bottom: 60px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 20px;
     height: 20px;
-    right: 35px;
+    right: 60px;
+    bottom: 60px;
   }
 }
 
 @keyframes arrows {
   0% {
-    border-left: $size/6 solid #fff2fd;
-    border-bottom: $size/6 solid #dc56c5;
+    border-left: $size/6 solid $text-color;
+    border-bottom: $size/6 solid $title-text-color;
     transform: translate($size/-6, $size * 4/-6) rotate(133deg);
   }
   10%,
   90% {
-    border-left: $size/6 solid #fff2fd;
-    border-bottom: $size/6 solid #dc56c5;
+    border-left: $size/6 solid $text-color;
+    border-bottom: $size/6 solid $title-text-color;
   }
   50% {
     border-left: $size/6 solid rgba(0, 0, 0, $peakopacity);
@@ -66,8 +68,8 @@ $peakopacity: 0.7;
     transform: translate($size/-6, 0px) rotate(133deg);
   }
   100% {
-    border-left: $size/6 solid #fff2fd;
-    border-bottom: $size/6 solid #dc56c5;
+    border-left: $size/6 solid $text-color;
+    border-bottom: $size/6 solid $title-text-color;
     transform: translate($size/-6, $size * 4/6) rotate(133deg);
   }
 }
