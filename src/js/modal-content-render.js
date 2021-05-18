@@ -30,6 +30,8 @@ export default async id => {
     const eventTime = result.response.dates.start.localTime.slice(0, -3);
     result.response.dates.start.localTime = eventTime;
 
+    console.log(result);
+
     appendEventContent(result);
   } catch (error) {
     console.log(error);
