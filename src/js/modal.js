@@ -82,18 +82,12 @@ const closeModalOnbackdropClick = evt => {
 };
 
 const removeListeners = () => {
-  const refsAnimation = {
-    btnAnim: document.querySelectorAll('.btn-tickets'),
-    moreBtnAnim: document.querySelector('.modal-author-button-container'),
+  const refsA = {
+    btnAnim: document.querySelector('.btn-tickets'),
   };
 
-  refsAnimation.btnAnim.forEach(elem =>
-    elem.addEventListener('mouseover', () => {
-      elem.classList.remove('animation');
-    }),
-  );
-  refsAnimation.moreBtnAnim.addEventListener('mouseover', () => {
-    refsAnimation.moreBtnAnim.classList.remove('animation');
+  refsA.btnAnim.addEventListener('mouseover', () => {
+    refsA.btnAnim.classList.remove('animation');
   });
 };
 
