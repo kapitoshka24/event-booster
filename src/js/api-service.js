@@ -53,7 +53,11 @@ class EventApiService {
       });
 
     const eventsAuthor = await fetch(
-      `${URL}?size=100&keyword=${response._embedded.events[0]._embedded.attractions[0].name}}&sort=date,asc&apikey=${API_KEY}`,
+      `${URL}?size=100&keyword=${
+        response._embedded.events[0]._embedded.attractions
+          ? response._embedded.events[0]._embedded.attractions[0].name
+          : response._embedded.events[0].name
+      }&sort=date,asc&apikey=${API_KEY}`,
     )
       .then(r => r.json())
       .catch(() => {

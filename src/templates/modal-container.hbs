@@ -36,7 +36,11 @@
         <li class="modal-data-item">
             <h3 class="modal-data-item-title">WHO</h3>
             <p class="modal-data-item-text">
+                {{#if _embedded.attractions}}
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
+                {{else}}
+                Unnknown author :(
+                {{/if}}
             </p>
         </li>
     </ul>
