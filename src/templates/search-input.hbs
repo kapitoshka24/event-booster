@@ -1,6 +1,35 @@
 
     <div class="wrapper">
-
-    <input class="wrapper__input  search-js" type="text" name="search" placeholder="Start searching">
-    
+    <input class="wrapper__input search-js" type="text" name="search" placeholder="Start searching">
+        <button class="advanced-search-btn" type="button">Advanced-search</button>
+        <ul class="advanced-search-list">
+            <li class="advanced-search-item">
+                <label>
+                    <input class="checkbox" type="checkbox" name="sort-name" id="">
+                    <span class="custom-checkbox"></span>
+                </label>
+                <label>Sort by name
+                    <input class="checkbox" type="checkbox" name="sort-asc-desc" id="">
+                    <span class="custom-checkbox arrow"></span>
+                </label>
+            </li>
+            <li class="advanced-search-item">
+                <label>
+                    <input class="checkbox" type="checkbox" name="sort-date" id="">
+                    <span class="custom-checkbox"></span>
+                </label>
+                <label>Sort by date
+                    <input class="checkbox" type="checkbox" name="sort-asc-desc" id="">
+                    <span class="custom-checkbox arrow"></span>
+                </label>
+            </li>
+            <li class="advanced-search-item">
+                <select class="genre-list" name="country">
+                    <option value="">Choose genre</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Blues">Blues</option>
+            </li>
+        </ul>
     </div>

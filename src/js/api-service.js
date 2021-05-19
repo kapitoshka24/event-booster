@@ -6,6 +6,8 @@ const URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
 export const options = {
   searchQuery: '',
   countryQuery: '',
+  sort: 'relevance,desc',
+   filterByGenre: []
 };
 
 class EventApiService {
@@ -19,7 +21,7 @@ class EventApiService {
 
   async fetchData(doPagesRefresh = true) {
     const response = await fetch(
-      `${URL}?size=24&keyword=${options.searchQuery}&page=${this.page}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
+      `${URL}?size=24&keyword=${options.searchQuery}&sort=${options.sort}&classificationName=${options.filterByGenre}&page=${this.page}&countryCode=${options.countryQuery}&apikey=${API_KEY}`,
     )
       .then(r => r.json())
       .catch(() => {
