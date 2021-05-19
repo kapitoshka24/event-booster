@@ -12,4 +12,5 @@ export const refs = {
   modalContentContainer: document.querySelector('.modal-data-container'),
   paginationList: document.querySelector('.pagination-list'),
   backdrop: document.querySelector('.backdrop'),
+  modalLocation: document.querySelector('.modal-location'),
 };

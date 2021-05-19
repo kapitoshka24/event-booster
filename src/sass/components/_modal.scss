@@ -436,21 +436,23 @@
   align-items: center;
   justify-content: center;
 
-  // text-decoration: underline;
-}
+  &:visited {
+    color: #0000ff;
+  }
 
-.maps::before {
-  content: '';
-  display: inline-block;
+  &::before {
+    content: '';
+    display: inline-block;
 
-  margin-right: 3px;
-  width: 21px;
-  height: 24px;
-  background-image: url(../images/modal/loc-1.svg);
+    margin-right: 3px;
+    width: 21px;
+    height: 24px;
+    background-image: url(../images/modal/loc-1.svg);
 
-  background-repeat: no-repeat;
-  // @media screen and (min-width: 768px) {
-  //   width: 7px;
-  //   height: 10px;
-  // }
+    background-repeat: no-repeat;
+    // @media screen and (min-width: 768px) {
+    //   width: 7px;
+    //   height: 10px;
+    // }
+  }
 }

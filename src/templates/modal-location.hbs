@@ -1,0 +1,16 @@
+{{#with response}}
+
+                <a class="maps"
+                    href="https://google.com/maps/place/{{#with _embedded.venues.[0].location}}{{latitude}}{{/with}},{{#with _embedded.venues.[0].location}}{{longitude}}{{/with}}">
+                    
+                    {{#with _embedded.venues}}
+                    {{#if [0].name}}
+                    {{[0].name}}
+                    {{else}}
+                    Unknown place
+                    {{/if}}
+                    {{/with}}
+                </a>
+            
+
+{{/with}}

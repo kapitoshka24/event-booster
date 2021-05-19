@@ -30,7 +30,7 @@ export default async id => {
     const eventTime = result.response.dates.start.localTime.slice(0, -3);
     result.response.dates.start.localTime = eventTime;
 
-    console.log(result);
+    // console.log(result);
 
     appendEventContent(result);
   } catch (error) {
@@ -53,21 +53,11 @@ const animateButtons = () => {
     moreBtnAnim: document.querySelector('.modal-author-button-container'),
   };
 
-  refsAnimation.btnAnim.forEach(
-    elem =>
-      elem.addEventListener('mouseover', () => {
-        elem.classList.add('animation');
-      }),
-    elem.addEventListener('click', e => {
-      e.preventDefault();
-      elem.classList.remove('animation');
+  refsAnimation.btnAnim.forEach(elem =>
+    elem.addEventListener('mouseover', () => {
+      elem.classList.add('animation');
     }),
   );
-
-  // refsAnimation.btnAnim.addEventListener('click', e => {
-  //   e.preventDefault();
-  //   refsAnimation.btnAnim.classList.remove('animation');
-  // }),
 
   refsAnimation.moreBtnAnim.addEventListener('mouseover', () => {
     refsAnimation.moreBtnAnim.classList.add('animation');

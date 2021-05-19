@@ -20,16 +20,8 @@
                 {{#with _embedded.venues.[0].city}}{{name}}{{/with}},
                 {{#with _embedded.venues.[0].country}}{{name}}{{/with}}
             </p>
-            <p class="modal-data-item-text">
-                <a class="maps" href="https://google.com/maps/place/{{#with _embedded.venues.[0].location}}{{latitude}}{{/with}},{{#with _embedded.venues.[0].location}}{{longitude}}{{/with}}">
-                {{#with _embedded.venues}}
-                {{#if [0].name}}
-                {{[0].name}}
-                {{else}}
-                Unknown place
-                {{/if}}
-                {{/with}}
-                </a>
+            <p class="modal-data-item-text modal-location">
+ 
             </p>
         </li>
         <li class="modal-data-item">
