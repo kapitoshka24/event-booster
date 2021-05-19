@@ -24,6 +24,7 @@ refs.closeModalBtn.addEventListener('click', onClickCross);
 refs.modal.addEventListener('click', closeModalOnbackdropClick);
 refs.cardContainer.addEventListener('click', onClickEvent);
 
+
 refs.cardContainer.addEventListener('animationend', () => {
   refs.cardContainer.classList.remove('card-animation');
 });

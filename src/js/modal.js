@@ -33,6 +33,11 @@ async function onClickEvent(e) {
     window.addEventListener('keydown', closeModalByEscKey);
   }
 }
+refs.cardContainer.addEventListener('keydown', (e) =>{
+  if (e.code === 'Enter'){    
+   onClickEvent(e)   
+  }
+});
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');
