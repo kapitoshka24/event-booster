@@ -353,7 +353,14 @@
 }
 
 .btn-tickets:first-child {
+  display: inline-block;
   margin-bottom: 0;
+}
+
+.btn-tickets a {
+  display: block;
+  width: 100%;
+  color: $text-color;
 }
 
 @mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
