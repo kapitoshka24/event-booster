@@ -1,5 +1,5 @@
 {{#with response}}
-<img class="modal-event-icon" src="{{#with images}}{{[5].url}}{{/with}}" width="132px" height="132px" />
+<img class="modal-event-icon" src="{{#with images}}{{[5].url}}{{/with}}" alt="{{name}}" width="132px" height="132px" />
 <div class="modal-event-data">
     <ul class="modal-event-data-list info">
         <li class="modal-data-item">
@@ -39,7 +39,7 @@
                 {{#if _embedded.attractions}}
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
                 {{else}}
-                Unnknown author :(
+                Unknown author :(
                 {{/if}}
             </p>
         </li>
@@ -80,8 +80,7 @@
 <select class="modal-author-button-container" name="author-attr" onchange="location = this.value">
     <option>MORE FROM THIS AUTHOR</option>
     {{#each this}}
-    <option value="{{url}}">{{#with _embedded.venues.[0].city}}{{name}}{{/with}} {{dates.start.localDate}}
-        {{/each}}
-        </ul>
+    <option value="{{url}}">{{#with _embedded.venues.[0].city}}{{name}}{{/with}} {{dates.start.localDate}}</option>
+    {{/each}}
 </select>
 {{/with}}
