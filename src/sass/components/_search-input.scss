@@ -10,6 +10,7 @@
 }
 
 .wrapper {
+  position: relative;
   margin-right: 0;
   margin-bottom: 25px;
 
@@ -25,21 +26,74 @@
   width: 270px;
   height: 40px;
 
-  border: none;
-  border-radius: 20px;
-
-  color: $form-text-color;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-
   font-family: $font;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-
+  color: $form-text-color;
+  backdrop-filter: blur(20px);
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
   background-image: url(../images/search-icon.svg);
   background-position: 225px 15px;
   background-repeat: no-repeat;
+}
+
+.hide {
+  display: none;
+}
+
+.checkbox {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+
+  overflow: hidden;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  border: 1px solid #000;
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+}
+
+.checkbox:checked + .custom-checkbox {
+  background-color: yellow;
+  border-color: transparent;
+
+  // background-image: url("../images/icon/modal-cheked.svg");
+  // background-size: contain;
+  // background-origin: border-box;
+}
+
+.advanced-search-btn {
+}
+
+.advanced-search-list {
+  position: absolute;
+  background-color: #fff;
+}
+
+.advanced-search-item {
+  width: 270px;
+}
+
+.wrapper:hover .advanced-search {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: block;
+
+  width: 100%;
+  background-color: #fff;
 }
 
 input::placeholder {
