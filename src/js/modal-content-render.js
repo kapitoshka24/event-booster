@@ -24,14 +24,17 @@ export default async id => {
   eventApiService.id = id;
   try {
     const result = await eventApiService.fetchEventById();
-
     result.eventsAuthor = getEventsByUniquePlace(result.eventsAuthor);
-
     const eventTime = result.response.dates.start.localTime.slice(0, -3);
     result.response.dates.start.localTime = eventTime;
-
-    // console.log(result);
-
+    
+    let eventLocation = result.response._embedded.venues.[0].location;
+    let tempSumm = parseFloat(eventLocation.latitude) + parseFloat(eventLocation.longitude)
+    if ( tempSumm == 0) {
+     eventLocation.latitude = undefined;
+      eventLocation.longitude = undefined;
+    }
+    
     appendEventContent(result);
   } catch (error) {
     console.log(error);

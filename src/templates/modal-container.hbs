@@ -21,7 +21,22 @@
                 {{#with _embedded.venues.[0].country}}{{name}}{{/with}}
             </p>
             <p class="modal-data-item-text modal-location">
- 
+
+                <a {{#with _embedded.venues}} {{#if [0].location.latitude }} class="maps"
+                    href="https://google.com/maps/place/{{[0].location.latitude}},{{[0].location.longitude}}">
+                    {{else}}
+                    href="#" style="color: black; pointer-events: none;">
+                    {{/if}}
+                    {{/with}}
+
+                    {{#with _embedded.venues}}
+                    {{#if [0].name}}
+                    {{[0].name}}
+                    {{else}}
+                    Place on map
+                    {{/if}}
+                    {{/with}}
+                </a>
             </p>
         </li>
         <li class="modal-data-item">
@@ -43,8 +58,8 @@
                     </span>
                     Standard
                     {{#with priceRanges}}
-                        {{#if [0].type}}{{[0].min}}-{{else}}unknown{{/if}}{{#if [0].type}}{{[0].max}}{{else}}unknown{{/if}}
-                        {{#if [0].type}}{{[0].currency}}{{else}}-{{/if}}
+                    {{#if [0].type}}{{[0].min}}-{{else}}unknown{{/if}}{{#if [0].type}}{{[0].max}}{{else}}unknown{{/if}}
+                    {{#if [0].type}}{{[0].currency}}{{else}}-{{/if}}
                     {{/with}}
                 </p>
             </li>
@@ -52,7 +67,7 @@
             <li class="modal-data-item">
                 <div class="modal-buy-button-container">
                     <span class="mas">BUY TICKETS</span>
-                <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
+                    <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
                 </div>
 
             </li>
@@ -66,8 +81,8 @@
                     VIP
                     {{!-- треба уточнити --}}
                     {{#with priceRanges}}
-                        {{#if [2].type}}{{[2].min}}-{{else}}{{/if}}{{#if [2].type}}{{[2].max}}{{else}}-{{/if}}
-                        {{#if [2].type}}{{[2].currency}}{{else}}-{{/if}}
+                    {{#if [2].type}}{{[2].min}}-{{else}}{{/if}}{{#if [2].type}}{{[2].max}}{{else}}-{{/if}}
+                    {{#if [2].type}}{{[2].currency}}{{else}}-{{/if}}
                     {{/with}}
                 </p>
             </li>
