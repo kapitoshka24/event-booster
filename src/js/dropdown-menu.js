@@ -13,4 +13,4 @@ function onFocusLoss() {
 
 $('select').on('change', function () {
     $(this).trigger('blur');
-});
+})
