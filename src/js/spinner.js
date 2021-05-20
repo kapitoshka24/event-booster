@@ -18,13 +18,15 @@ const addFirstVisitStyles = () => {
   addClassSpinner({ search: '.spinner-container' });
   addClassSpinner({ search: 'div.dot-pulse' });
 };
-const spinnerOverlay = '<div class="spinner-overlay"></div>'
-refs.body.insertAdjacentHTML("afterbegin", spinnerOverlay);
-  document.querySelector('.spinner-overlay').insertAdjacentHTML("afterbegin", spinner());
-  addFirstVisitStyles();
+const spinnerOverlay = '<div class="spinner-overlay"></div>';
+refs.body.insertAdjacentHTML('afterbegin', spinnerOverlay);
+document
+  .querySelector('.spinner-overlay')
+  .insertAdjacentHTML('afterbegin', spinner());
+addFirstVisitStyles();
 addSpinner('mainPart', 'beforeend');
-  refs.body.style = ""
-  setTimeout(() => {
-    refs.firstVisit.style = ""
-    document.querySelector('.spinner-overlay').outerHTML = '';
-  }, 1000);
+refs.body.style = '';
+setTimeout(() => {
+  refs.firstVisit.style = '';
+  document.querySelector('.spinner-overlay').outerHTML = '';
+}, 1000);
