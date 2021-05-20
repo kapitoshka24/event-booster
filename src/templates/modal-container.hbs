@@ -41,7 +41,9 @@
                 {{#if _embedded.attractions}}
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
                 {{else}}
-                Unknown author :(
+                <span class="jdun">
+                    No author yet
+                </span>
                 {{/if}}
             </p>
         </li>
