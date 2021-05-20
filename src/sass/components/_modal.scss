@@ -527,13 +527,14 @@
 .jdun {
   display: flex;
   align-items: center;
+  font-weight: 500;
 
   &::after {
     content: '';
     display: inline-block;
     vertical-align: middle;
 
-    margin-left: 10px;
+    margin-left: 3px;
     width: 21px;
     height: 24px;
 
