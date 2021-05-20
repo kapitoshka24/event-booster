@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   width: 320px;
   margin: 0 auto;
+  justify-content: center;
 
   padding: 0 15px 0 25px;
   @media screen and (min-width: 768px) {
@@ -65,13 +66,12 @@
 }
 
 .no-events {
-  margin-left: auto;
-  margin-right: auto;
-
   font-family: $font;
   font-weight: 900;
   font-size: 18px;
   line-height: 1.22;
 
   color: $title-text-color;
+
+  text-align: center;
 }
