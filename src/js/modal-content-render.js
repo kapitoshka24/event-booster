@@ -43,7 +43,7 @@ export default async id => {
 
     appendEventContent(result);
 
-    if (!result.response.priceRanges) {
+    if (!result.response.url) {
       document
         .querySelector('.btn-tickets')
         .setAttribute('disabled', 'disabled');
@@ -70,11 +70,11 @@ const animateButtons = () => {
     btnCont: document.querySelector('.modal-buy-button-container'),
   };
 
+  console.log(refsA.btnAnim.disabled);
+
   if (refsA.btnAnim.disabled === false) {
     refsA.btnAnim.addEventListener('mouseover', () => {
       refsA.btnAnim.classList.add('animation');
-    });
-    refsA.btnCont.addEventListener('mouseover', () => {
       refsA.btnCont.classList.add('anim');
     });
   }
