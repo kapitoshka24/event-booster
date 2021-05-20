@@ -11,8 +11,8 @@ import countries from '../../countries.json';
 
 $(async function () {
   const updatePages = async () => {
-    const result = await eventApiService.fetchData(false);
-    const totalPages = result.totalPages;
+    const totalPages = (await eventApiService.fetchData(false)).totalPages;
+    // const totalPages = result.totalPages;
 
     if (totalPages === 0) {
       refs.cardContainer.innerHTML = '';
@@ -34,7 +34,7 @@ $(async function () {
           'beforeend',
           noEventsForTwoQueriesTpl(queries),
         );
-        return;
+        // return;
       }
 
       if (options.countryQuery && !options.searchQuery) {
@@ -45,7 +45,7 @@ $(async function () {
           'beforeend',
           noEventsCountryTpl(country),
         );
-        return;
+        // return;
       }
 
       if (options.searchQuery && !options.countryQuery) {
@@ -53,7 +53,7 @@ $(async function () {
           'beforeend',
           noEventsQueryTpl(options.searchQuery),
         );
-        return;
+        // return;
       }
     } else {
       refs.paginationList.classList.remove('hide-pages');
@@ -69,7 +69,7 @@ $(async function () {
           toggleSpinner('mainPart', 'remove');
 
           eventApiService.page = data;
-          const events = result.events;
+          const events = (await eventApiService.fetchData(false)).events;
 
           refs.cardContainer.insertAdjacentHTML(
             'beforeend',
