@@ -456,6 +456,11 @@
 .modal-buy-button-container button:disabled {
   background: rgba(102, 102, 102, 0.8);
   cursor: default;
+
+  & a {
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -552,5 +557,26 @@
       width: 31px;
       height: 34px;
     }
+  }
+}
+.maps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:visited {
+    color: #0000ff;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+
+    margin-right: 3px;
+    width: 21px;
+    height: 24px;
+
+    background-image: url(../images/modal/loc-1.svg);
+    background-repeat: no-repeat;
   }
 }

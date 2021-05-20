@@ -13,4 +13,5 @@ export const refs = {
   paginationList: document.querySelector('.pagination-list'),
   backdrop: document.querySelector('.backdrop'),
   goTopBtn: document.querySelector('.back_to_top'),
+  modalLocation: document.querySelector('.modal-location'),
 };
