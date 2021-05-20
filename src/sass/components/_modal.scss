@@ -352,7 +352,14 @@
 }
 
 .btn-tickets:first-child {
+  display: inline-block;
   margin-bottom: 0;
+}
+
+.buy-link {
+  display: block;
+  width: 100%;
+  color: $text-color;
 }
 
 @mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
@@ -514,5 +521,36 @@
   to {
     -webkit-mask-position: 0 0;
     mask-position: 0 0;
+  }
+}
+
+.jdun {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-left: 3px;
+    width: 21px;
+    height: 24px;
+
+    background-image: url(../images/jdun/jdun-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: 768px) {
+      width: 26px;
+      height: 29px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 31px;
+      height: 34px;
+    }
   }
 }

@@ -1,6 +1,5 @@
 import { refs } from './refs';
 import searchEventById from './modal-content-render';
-import { eventApiService } from './api-service';
 import { addSpinner } from './spinner';
 import { addClassSpinner } from './spinner';
 
@@ -8,12 +7,6 @@ async function onClickEvent(e) {
   e.preventDefault();
 
   const selectedEl = e.target;
-
-  const result = await eventApiService.fetchEventById();
-
-  if (!result) {
-    return;
-  }
 
   if (
     selectedEl.classList.contains('card-container') &
@@ -37,8 +30,14 @@ async function onClickEvent(e) {
     const idEvent = selectedEl.closest('#card').getAttribute('data-id');
     modalShow();
     onModalOpen(idEvent);
+    window.addEventListener('keydown', closeModalByEscKey);
   }
 }
+refs.cardContainer.addEventListener('keydown', (e) =>{
+  if (e.code === 'Enter'){    
+   onClickEvent(e)   
+  }
+});
 
 function onClickCross() {
   refs.modal.classList.add('is-hidden');

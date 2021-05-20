@@ -20,6 +20,7 @@ const searchEventsByQuery = value => {
 
 export function onCountrySearch() {
   options.countryQuery = this.value;
+  document.querySelector('select').classList.add('arrow-down');
   renderEvents();
 }
 

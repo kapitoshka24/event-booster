@@ -1,5 +1,5 @@
 {{#with response}}
-<img class="modal-event-icon" src="{{#with images}}{{[5].url}}{{/with}}" width="132px" height="132px" />
+<img class="modal-event-icon" src="{{#with images}}{{[5].url}}{{/with}}" alt="{{name}}" width="132px" height="132px" />
 <div class="modal-event-data">
     <ul class="modal-event-data-list info">
         <li class="modal-data-item">
@@ -27,7 +27,9 @@
                     {{#if [0].name}}
                     {{[0].name}}
                     {{else}}
-                    No place yet :(
+                    <span class="jdun">
+                        No place yet
+                    </span>
                     {{/if}}
                     {{/with}}
                 </p>
@@ -39,12 +41,14 @@
                 {{#if _embedded.attractions}}
                 {{#with _embedded.attractions.[0]}}{{name}}{{/with}}
                 {{else}}
-                Unnknown author :(
+                <span class="jdun">
+                    No author yet
+                </span>
                 {{/if}}
             </p>
         </li>
     </ul>
-    <img class="modal-poster" src="{{#with images}}{{[5].url}}{{/with}}" width="360px" height="641px" />
+    <img class="modal-poster" src="{{#with images}}{{[5].url}}{{/with}}" alt="{{name}}" width="360px" height="641px" />
     <ul class="modal-event-data-list">
         <div class="modal-data-item-flex-3">
             <li>
@@ -61,14 +65,16 @@
                     {{#if [0].type}}{{[0].currency}}{{/if}}
                     {{/with}}
                     {{else}}
-                    No price yet :(
+                    <span class="jdun">
+                        No price yet
+                    </span>
                     {{/if}}
                 </p>
             </li>
             <li class="modal-data-item">
                 <div class="modal-buy-button-container" tabindex="0">
                     <span class="mas">BUY TICKETS</span>
-                    <button class="btn-tickets" link="{{url}}">BUY TICKETS</button>
+                    <button class="btn-tickets"><a class="buy-link" href="{{url}}">BUY TICKETS</a></button>
                 </div>
             </li>
         </div>
@@ -80,8 +86,7 @@
 <select class="modal-author-button-container" name="author-attr" onchange="location = this.value">
     <option>MORE FROM THIS AUTHOR</option>
     {{#each this}}
-    <option value="{{url}}">{{#with _embedded.venues.[0].city}}{{name}}{{/with}} {{dates.start.localDate}}
-        {{/each}}
-        </ul>
+    <option value="{{url}}">{{#with _embedded.venues.[0].city}}{{name}}{{/with}} {{dates.start.localDate}}</option>
+    {{/each}}
 </select>
 {{/with}}

@@ -142,6 +142,7 @@ input::placeholder {
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
 
   background-image: url(../images/arrow-down.svg);
   background-position: 225px 17px;
@@ -152,4 +153,9 @@ input::placeholder {
     background-position: 225px 15px;
     background-repeat: no-repeat;
   }
+}
+
+.arrow-down {
+  background-image: url(../images/arrow-down.svg);
+  background-position: 225px 17px;
 }
