@@ -8,9 +8,12 @@ function getEventsByUniquePlace(arr) {
   const uniqueArrPlace = [];
   for (let i = 0; i < arr.length; i++) {
     if (!arr[i]._embedded) {
-      continue
+      continue;
     }
-    if (!uniqueArrPlaceId.includes(arr[i]._embedded.venues[0].id) & uniqueArrPlaceId.length < 10) {
+    if (
+      !uniqueArrPlaceId.includes(arr[i]._embedded.venues[0].id) &
+      (uniqueArrPlaceId.length < 10)
+    ) {
       uniqueArrPlaceId.push(arr[i]._embedded.venues[0].id);
       uniqueArrPlace.push(arr[i]);
     }
@@ -23,11 +26,19 @@ export default async id => {
   try {
     const result = await eventApiService.fetchEventById();
 
-      result.eventsAuthor = getEventsByUniquePlace(result.eventsAuthor);
+    result.eventsAuthor = getEventsByUniquePlace(result.eventsAuthor);
 
     if (result.response.dates.start.localTime) {
       const eventTime = result.response.dates.start.localTime.slice(0, -3);
       result.response.dates.start.localTime = eventTime;
+    }
+
+    let eventLocation = result.response._embedded.venues[0].location;
+    let tempSumm =
+      parseFloat(eventLocation.latitude) + parseFloat(eventLocation.longitude);
+    if (tempSumm == 0) {
+      eventLocation.latitude = undefined;
+      eventLocation.longitude = undefined;
     }
 
     appendEventContent(result);

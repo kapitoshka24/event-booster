@@ -351,6 +351,31 @@
   }
 }
 
+.btn-tickets {
+  padding: 0;
+  width: 145px;
+  height: 40px;
+  font-family: $font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: $text-color;
+  background: $modal-btn-color;
+  border: none;
+  border-radius: 5px;
+  transform: scale(1);
+  transition: transitionFunc(transform);
+  @media screen and (min-width: 1270px) {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
+      cursor: pointer;
+    }
+  }
+}
+
 .btn-tickets:first-child {
   display: inline-block;
   margin-bottom: 0;
@@ -394,11 +419,12 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    transition: transitionFunc(transform);
-
     @media screen and (max-width: 767px) {
       transform: scale(1);
+    }
+    @media screen and (min-width: 1270px) {
+      transform: scale(1.1);
+      transition: transitionFunc(transform);
     }
   }
 
@@ -458,7 +484,7 @@
   cursor: default;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1279px) {
   .animation {
     -webkit-animation: animationOut 0.7s steps(22) forwards;
     animation: animationOut 0.7s steps(22) forwards;
@@ -473,7 +499,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1279px) {
   .anim {
     transform: scale(1);
     transition: transitionFunc(transform);
@@ -552,5 +578,27 @@
       width: 31px;
       height: 34px;
     }
+  }
+}
+
+.maps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:visited {
+    color: #0000ff;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+
+    margin-right: 3px;
+    width: 21px;
+    height: 24px;
+
+    background-image: url(../images/modal/loc-1.svg);
+    background-repeat: no-repeat;
   }
 }
