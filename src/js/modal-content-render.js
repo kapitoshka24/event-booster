@@ -33,13 +33,15 @@ export default async id => {
       result.response.dates.start.localTime = eventTime;
     }
 
-    let eventLocation = result.response._embedded.venues[0].location;
-    let tempSumm =
-      parseFloat(eventLocation.latitude) + parseFloat(eventLocation.longitude);
-    if (tempSumm == 0) {
-      eventLocation.latitude = undefined;
-      eventLocation.longitude = undefined;
-    }
+    if (result.response._embedded.venues[0].location) {
+      let eventLocation = result.response._embedded.venues[0].location;
+      let tempSumm =
+        parseFloat(eventLocation.latitude) + parseFloat(eventLocation.longitude);
+      if (tempSumm === 0) {
+        eventLocation.latitude = undefined;
+        eventLocation.longitude = undefined;
+      };
+    };
 
     appendEventContent(result);
 
