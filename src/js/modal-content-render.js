@@ -47,6 +47,17 @@ export default async id => {
       document
         .querySelector('.btn-tickets')
         .setAttribute('disabled', 'disabled');
+      document
+        .querySelector('.buy-link')
+        .setAttribute('onclick', 'return false');
+    }
+    else if (!result.response.priceRanges) {
+      document
+        .querySelector('.btn-tickets')
+        .setAttribute('disabled', 'disabled');
+      document
+        .querySelector('.buy-link')
+        .setAttribute('onclick', 'return false');
     }
   } catch (error) {
     console.log(error);
