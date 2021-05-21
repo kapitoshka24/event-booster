@@ -26,6 +26,9 @@
                 <p class="modal-data-item-text modal-location">
                 <a {{#with _embedded.venues}} {{#if [0].location.latitude }} class="maps"
                     href="https://google.com/maps/place/{{[0].location.latitude}},{{[0].location.longitude}}">
+                    <svg class="maps-svg">
+                        <use class="maps-icon" href="./images/symbol-defs.svg#map"></use>
+                    </svg>
                     {{else}}
                     href="#" style="color: black; pointer-events: none;">
                     {{/if}}
@@ -87,7 +90,7 @@
             <li class="modal-data-item">
                 <div class="modal-buy-button-container" tabindex="0">
                     <span class="mas">BUY TICKETS</span>
-                    <button class="btn-tickets"><a class="buy-link" href="{{url}}">BUY TICKETS</a></button>
+                    <button class="btn-tickets"><a class="buy-link" target="_blank"href="{{url}}">BUY TICKETS</a></button>
                 </div>
             </li>
         </div>
