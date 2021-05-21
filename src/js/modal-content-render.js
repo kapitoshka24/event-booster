@@ -36,12 +36,13 @@ export default async id => {
     if (result.response._embedded.venues[0].location) {
       let eventLocation = result.response._embedded.venues[0].location;
       let tempSumm =
-        parseFloat(eventLocation.latitude) + parseFloat(eventLocation.longitude);
+        parseFloat(eventLocation.latitude) +
+        parseFloat(eventLocation.longitude);
       if (tempSumm === 0) {
         eventLocation.latitude = undefined;
         eventLocation.longitude = undefined;
-      };
-    };
+      }
+    }
 
     appendEventContent(result);
 
@@ -71,8 +72,6 @@ const animateButtons = () => {
     btnAnim: document.querySelector('.btn-tickets'),
     btnCont: document.querySelector('.modal-buy-button-container'),
   };
-
-  console.log(refsA.btnAnim.disabled);
 
   if (refsA.btnAnim.disabled === false) {
     refsA.btnAnim.addEventListener('mouseover', () => {

@@ -12,7 +12,6 @@ import countries from '../../countries.json';
 $(async function () {
   const updatePages = async () => {
     const totalPages = (await eventApiService.fetchData(false)).totalPages;
-    // const totalPages = result.totalPages;
 
     if (totalPages === 0) {
       refs.cardContainer.innerHTML = '';
@@ -34,7 +33,6 @@ $(async function () {
           'beforeend',
           noEventsForTwoQueriesTpl(queries),
         );
-        // return;
       }
 
       if (options.countryQuery && !options.searchQuery) {
@@ -45,7 +43,6 @@ $(async function () {
           'beforeend',
           noEventsCountryTpl(country),
         );
-        // return;
       }
 
       if (options.searchQuery && !options.countryQuery) {
@@ -53,7 +50,6 @@ $(async function () {
           'beforeend',
           noEventsQueryTpl(options.searchQuery),
         );
-        // return;
       }
     } else {
       refs.paginationList.classList.remove('hide-pages');
